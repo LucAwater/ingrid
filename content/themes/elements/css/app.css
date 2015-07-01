@@ -1324,7 +1324,8 @@ h1, h2, p, a {
   font-style: normal;
   font-size: 16px;
   font-weight: normal;
-  text-rendering: geometricPrecision; }
+  text-rendering: geometricPrecision;
+  color: #333333; }
   h1.is_bold, h2.is_bold, p.is_bold, a.is_bold {
     font-weight: 700; }
 
@@ -1351,10 +1352,15 @@ aside,
 main {
   width: 50%;
   height: auto;
-  min-height: 100%;
+  min-height: 100%; }
+
+aside {
+  top: 0;
+  position: fixed;
   float: left; }
 
 main {
+  float: right;
   background-color: #f3f4f5; }
 
 main {
@@ -1396,7 +1402,7 @@ header {
 footer {
   z-index: 1100;
   padding: 50px;
-  background: black;
+  background: #333333;
   text-align: center; }
   footer > img {
     max-width: 250px;
@@ -1421,6 +1427,20 @@ aside .aside-images li {
     height: auto;
     margin-top: 50%; }
 
+aside .aside-text {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  padding: 100px 50px;
+  text-align: center;
+  background-color: #e8e7e6; }
+  aside .aside-text p {
+    max-width: 500px;
+    margin: auto; }
+    aside .aside-text p span {
+      text-decoration: none !important;
+      border-bottom: thin dotted #333333; }
+
 a.trigger-menu {
   width: 35px;
   height: 35px;
@@ -1431,13 +1451,13 @@ a.trigger-menu {
     height: 3px;
     display: block;
     top: calc(50% - 1.5px);
-    background: black; }
+    background: #333333; }
     a.trigger-menu i:before, a.trigger-menu i:after {
       content: " ";
       position: absolute;
       width: 100%;
       height: 100%;
-      background: black;
+      background: #333333;
       transition: .2s; }
     a.trigger-menu i:before {
       margin-top: -8px; }
@@ -1531,9 +1551,9 @@ nav ul li.current {
       height: 0.5rem;
       border-radius: 50%;
       background: transparent;
-      border: thin solid black; }
+      border: thin solid #333333; }
     .slider-bullets li.is-active i {
-      background-color: black; }
+      background-color: #333333; }
 
 /* Arrows */
 .slider-controls {
@@ -1564,13 +1584,13 @@ nav ul li.current {
         width: 0.1875rem;
         height: 100%;
         position: absolute;
-        background: black;
+        background: #333333;
         content: " "; }
       .slider-controls .arrow i:after {
         height: 0.1875rem;
         width: 100%;
         position: absolute;
-        background: black;
+        background: #333333;
         content: " "; }
     .slider-controls .arrow.arrow-left {
       left: 0;
@@ -2027,7 +2047,7 @@ h1.is-aligned-left, h2.is-aligned-left, p.is-aligned-left, a.is-aligned-left {
 h1.is-aligned-right, h2.is-aligned-right, p.is-aligned-right, a.is-aligned-right {
   text-align: right; }
 h1.is-black, h2.is-black, p.is-black, a.is-black {
-  color: black; }
+  color: #333333; }
 h1.is-white, h2.is-white, p.is-white, a.is-white {
   color: white; }
 

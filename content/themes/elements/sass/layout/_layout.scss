@@ -3,9 +3,17 @@ main{
   width: 50%;
   height: auto;
   min-height: 100%;
+}
+
+aside{
+  top: 0;
+  position: fixed;
+
   float: left;
 }
 
 main{
-  background-color: $grey-light;
+  float: right;
+
+  background-color: $grey-lighter;
 }

@@ -3,6 +3,7 @@
   font-size: 16px;
   font-weight: normal;
   text-rendering: geometricPrecision;
+  color: $black;
 }
 
 h1{
@@ -21,11 +22,11 @@ p{
 
 a{
   @extend %base;
-  
+
   color: black;
   text-decoration: underline;
   cursor: pointer;
-  
+
   &.link-h1,
   &.link-h2,
   &.link-h3,
