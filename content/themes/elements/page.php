@@ -26,11 +26,11 @@ get_header();
   <?php include( 'includes/nav.php' );
 
   // Loop into ACF groups
-  if( have_rows('page') ): $i_anchor = 1;
-    while( have_rows('page') ): the_row();
+  if( have_rows('content') ): $i_anchor = 1;
+    while( have_rows('content') ): the_row();
 
-      if( get_row_layout() == 'text' ):
-        include( locate_template('content/text.php') ); $i_anchor++;
+      if( get_row_layout() == 'playlist' ):
+        include( locate_template('content/playlist.php') ); $i_anchor++;
       endif;
 
     endwhile;
