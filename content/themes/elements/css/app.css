@@ -1347,24 +1347,16 @@ body {
   min-height: 100%;
   background: white; }
 
-header {
-  padding-left: 3.75rem;
-  padding-right: 3.75rem; }
+aside,
+main {
+  width: 50%;
+  height: auto;
+  min-height: 100%;
+  float: left; }
 
-main,
-footer {
-  padding-left: 2.8125rem;
-  padding-right: 2.8125rem; }
+main {
+  background-color: #f3f4f5; }
 
-@media only screen and (max-width: 31.25em) {
-  header {
-    padding-left: 1.875rem;
-    padding-right: 1.875rem; }
-
-  main,
-  footer {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem; } }
 main {
   height: auto !important;
   height: 100%;
@@ -1415,6 +1407,19 @@ footer {
     width: 35px;
     padding: 0 .5em;
     display: inline-block; }
+
+aside .aside-images li {
+  display: block; }
+  aside .aside-images li img {
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+    width: 100%;
+    height: auto;
+    margin-top: 50%; }
 
 a.trigger-menu {
   width: 35px;

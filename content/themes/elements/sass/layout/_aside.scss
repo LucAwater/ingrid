@@ -1,0 +1,16 @@
+// Aside images
+aside .aside-images{
+  li{
+    display: block;
+
+    img{
+      @include transform( translateY(-50%) );
+
+      position: absolute;
+
+      width: 100%;
+      height: auto;
+      margin-top: 50%;
+    }
+  }
+}
