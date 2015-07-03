@@ -11,7 +11,7 @@ echo
   <div class="section-body">
     <h2 class="s-4 columns is-uppercase is-bold is-aligned-center">' . $title . '</h2>
     ' . $content . '
-    <a href="' . $button_link . '">' . $button_text . '</a>
+    <a class="button" href="' . $button_link . '">' . $button_text . '</a>
   </div>
 </section>';
 ?>
