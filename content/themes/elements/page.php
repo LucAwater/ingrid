@@ -16,9 +16,9 @@ get_header();
   echo '</div>';
 
   // Left text
-  $left_text = get_field( 'left_text' );
-
-  echo '<div class="aside-text">' . $left_text . '</div>';
+  // $left_text = get_field( 'left_text' );
+  //
+  // echo '<div class="aside-text">' . $left_text . '</div>';
   ?>
 </aside>
 
@@ -29,10 +29,12 @@ get_header();
   if( have_rows('content') ): $i_anchor = 1;
     while( have_rows('content') ): the_row();
 
-      if( get_row_layout() == 'playlist' ):
+      if( get_row_layout() == 'text' ):
+        include( locate_template('content/text.php') ); $i_anchor++;
+      elseif( get_row_layout() == 'playlist' ):
         include( locate_template('content/playlist.php') ); $i_anchor++;
       endif;
-
+      
     endwhile;
   endif;
 
