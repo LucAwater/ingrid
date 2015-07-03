@@ -1,14 +1,22 @@
 section.text{
   text-align: center;
-  
+
   .section-body{
-    max-width: 600px;
+    max-width: 500px;
     margin: auto;
-    
+
     h2,
-    p,
-    a{
+    p{
       margin-bottom: 1em;
+    }
+
+    p span{
+      text-decoration: none !important;
+      border-bottom: thin dotted $black;
+    }
+
+    .button{
+      margin-top: 1em;
     }
   }
 }

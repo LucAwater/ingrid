@@ -1429,20 +1429,6 @@ aside .aside-images li {
     height: auto;
     margin-top: 50%; }
 
-aside .aside-text {
-  bottom: 0;
-  position: absolute;
-  width: 100%;
-  padding: 100px 50px;
-  text-align: center;
-  background-color: #e8e7e6; }
-  aside .aside-text p {
-    max-width: 500px;
-    margin: auto; }
-    aside .aside-text p span {
-      text-decoration: none !important;
-      border-bottom: thin dotted #333333; }
-
 a.trigger-menu {
   width: 35px;
   height: 35px;
@@ -1535,12 +1521,16 @@ main section:last-child {
 section.text {
   text-align: center; }
   section.text .section-body {
-    max-width: 600px;
+    max-width: 500px;
     margin: auto; }
     section.text .section-body h2,
-    section.text .section-body p,
-    section.text .section-body a {
+    section.text .section-body p {
       margin-bottom: 1em; }
+    section.text .section-body p span {
+      text-decoration: none !important;
+      border-bottom: thin dotted #333333; }
+    section.text .section-body .button {
+      margin-top: 1em; }
 
 section.playlist ul li {
   height: 100px;

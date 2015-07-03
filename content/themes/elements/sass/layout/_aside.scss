@@ -14,25 +14,3 @@ aside .aside-images{
     }
   }
 }
-
-// Aside text
-aside .aside-text{
-  bottom: 0;
-  position: absolute;
-
-  width: 100%;
-  padding: 100px 50px;
-
-  text-align: center;
-  background-color: $grey-light;
-
-  p{
-    max-width: 500px;
-    margin: auto;
-
-    span{
-      text-decoration: none !important;
-      border-bottom: thin dotted $black;
-    }
-  }
-}
