@@ -23,7 +23,8 @@ get_header();
 </aside>
 
 <main role="main">
-  <?php include( 'includes/nav.php' );
+  <?php
+  // include( 'includes/nav.php' );
 
   // Loop into ACF groups
   if( have_rows('content') ): $i_anchor = 1;
@@ -34,7 +35,7 @@ get_header();
       elseif( get_row_layout() == 'playlist' ):
         include( locate_template('content/playlist.php') ); $i_anchor++;
       endif;
-      
+
     endwhile;
   endif;
 

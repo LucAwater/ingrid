@@ -1,24 +1,28 @@
 <?php
-echo '<section class="playlist" id="playlist">';
-  if( have_rows('playlist_item') ):
+echo
+'<section class="playlist" id="playlist">
+  <div class="section-body">';
+    if( have_rows('playlist_item') ):
 
-    echo '<ul>';
-    $i = 1;
+      echo '<ul>';
+      $i = 1;
 
-    while( have_rows('playlist_item') ): the_row();
-      $title = get_sub_field( 'playlist_item_title' );
+      while( have_rows('playlist_item') ): the_row();
+        $title = get_sub_field( 'playlist_item_title' );
 
-      echo
-      '<li>
-      <p>0' . $i . '. ' . $title . '<p>
-      </li>';
+        echo
+        '<li>
+        <p>0' . $i . '. ' . $title . '<p>
+        </li>';
 
-      $i++;
-      
-    endwhile;
+        $i++;
 
-    echo '</ul>';
+      endwhile;
 
-  endif;
-echo '</section>';
+      echo '</ul>';
+
+    endif;
+  echo
+  '</div>
+</section>';
 ?>
