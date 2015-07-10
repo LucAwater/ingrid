@@ -10,7 +10,7 @@ get_header();
   echo '<div class="aside-images">';
 
   foreach( $left_images as $image ):
-    echo '<li><img src="' . $image['sizes']['large'] . '"></li>';
+    echo '<li style="background-image: url(' . $image['sizes']['large'] . ')"></li>';
   endforeach;
 
   echo '</div>';

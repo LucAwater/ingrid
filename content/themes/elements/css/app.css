@@ -1427,10 +1427,10 @@ aside .aside-images {
   height: 100%; }
   aside .aside-images li {
     height: 100%;
-    display: block; }
-    aside .aside-images li img {
-      width: 100%;
-      height: auto; }
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; }
 
 a.trigger-menu {
   width: 35px;
