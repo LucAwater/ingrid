@@ -9,4 +9,10 @@
   color: $white;
   line-height: 40px;
   text-decoration: none;
+
+  &:hover,
+  &:focus{
+    color: $white;
+    background-color: $pink-dark;
+  }
 }

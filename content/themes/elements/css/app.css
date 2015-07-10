@@ -1504,6 +1504,9 @@ nav ul li.current {
   color: white;
   line-height: 40px;
   text-decoration: none; }
+  .button:hover, .button:focus {
+    color: white;
+    background-color: #c81e50; }
 
 section {
   display: -webkit-box;
