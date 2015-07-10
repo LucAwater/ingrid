@@ -1337,6 +1337,7 @@ p {
 
 a {
   color: #333333;
+  font-weight: 100;
   letter-spacing: 1.2px;
   text-decoration: none;
   text-transform: uppercase;
@@ -1474,8 +1475,22 @@ a.trigger-menu:hover i:after {
 a.trigger-menu:focus i:before {
   -webkit-animation: activebefore .4s linear; }
 
-nav ul li {
-  margin: 0 1em; }
+nav {
+  right: 0;
+  position: fixed;
+  z-index: 1100;
+  width: 60%;
+  height: 50px;
+  background-color: #333333;
+  text-align: center; }
+  nav ul {
+    display: inline;
+    line-height: 50px; }
+    nav ul li {
+      display: inline-block;
+      margin: 0 2em; }
+      nav ul li a {
+        color: white; }
 
 nav ul li.current {
   text-decoration: underline; }
