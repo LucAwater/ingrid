@@ -1336,9 +1336,13 @@ p {
   line-height: 1.4; }
 
 a {
-  color: black;
-  text-decoration: underline;
+  color: #333333;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  text-transform: uppercase;
   cursor: pointer; }
+  a:hover, a:focus {
+    color: #dd2663; }
   a.link-h1, a.link-h2, a.link-h3, a.link-p {
     text-decoration: none; }
 
@@ -1416,18 +1420,17 @@ footer {
     padding: 0 .5em;
     display: inline-block; }
 
-aside .aside-images li {
-  display: block; }
-  aside .aside-images li img {
-    -moz-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    position: absolute;
-    width: 100%;
-    height: auto;
-    margin-top: 50%; }
+aside {
+  height: 100vh; }
+
+aside .aside-images {
+  height: 100%; }
+  aside .aside-images li {
+    height: 100%;
+    display: block; }
+    aside .aside-images li img {
+      width: 100%;
+      height: auto; }
 
 a.trigger-menu {
   width: 35px;
@@ -1471,13 +1474,8 @@ a.trigger-menu:hover i:after {
 a.trigger-menu:focus i:before {
   -webkit-animation: activebefore .4s linear; }
 
-nav ul {
-  display: inline; }
-  nav ul li {
-    display: inline-block;
-    padding-right: 1em; }
-    nav ul li a {
-      text-decoration: none; }
+nav ul li {
+  margin: 0 1em; }
 
 nav ul li.current {
   text-decoration: underline; }
@@ -1489,11 +1487,8 @@ nav ul li.current {
   background-color: #dd2663;
   border-radius: 22px;
   color: white;
-  font-weight: 100;
-  letter-spacing: 1.2px;
   line-height: 40px;
-  text-decoration: none;
-  text-transform: uppercase; }
+  text-decoration: none; }
 
 section {
   display: -webkit-box;

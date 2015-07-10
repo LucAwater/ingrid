@@ -25,9 +25,16 @@ p{
 a{
   @extend %base;
 
-  color: black;
-  text-decoration: underline;
+  color: $black;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  text-transform: uppercase;
   cursor: pointer;
+
+  &:hover,
+  &:focus{
+    color: $pink;
+  }
 
   &.link-h1,
   &.link-h2,

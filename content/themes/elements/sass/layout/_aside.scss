@@ -1,16 +1,18 @@
+aside{
+  height: 100vh;
+}
+
 // Aside images
 aside .aside-images{
+  height: 100%;
+
   li{
+    height: 100%;
     display: block;
 
     img{
-      @include transform( translateY(-50%) );
-
-      position: absolute;
-
       width: 100%;
       height: auto;
-      margin-top: 50%;
     }
   }
 }

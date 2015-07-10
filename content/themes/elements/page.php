@@ -24,7 +24,7 @@ get_header();
 
 <main role="main">
   <?php
-  // include( 'includes/nav.php' );
+  include( 'includes/nav.php' );
 
   // Loop into ACF groups
   if( have_rows('content') ): $i_anchor = 1;
