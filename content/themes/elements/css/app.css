@@ -1375,7 +1375,7 @@ main {
   height: 100%;
   min-height: 100%;
   overflow: hidden;
-  padding: 0 100px;
+  padding: 50px 100px 0;
   background: white; }
 
 header {
@@ -1476,6 +1476,7 @@ a.trigger-menu:focus i:before {
   -webkit-animation: activebefore .4s linear; }
 
 nav {
+  top: 0;
   right: 0;
   position: fixed;
   z-index: 1100;
