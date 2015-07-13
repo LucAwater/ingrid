@@ -1,0 +1,23 @@
+// Hovered or Active
+.progress-container:hover,
+.progress-container.is_active{
+  progress::-webkit-progress-bar{
+    border-color: $pink;
+  }
+
+  progress::-webkit-progress-value:before{
+    background-color: $pink;
+  }
+
+  .mask-2{
+    background: $pink !important;
+  }
+
+  .trigger-audio.play i{
+    border-left: 15px solid $pink;
+  }
+
+  .trigger-audio.pause i{
+    border-color: $pink;
+  }
+}
