@@ -1375,7 +1375,7 @@ main {
   height: 100%;
   min-height: 100%;
   overflow: hidden;
-  padding: 50px 100px 0;
+  padding: 50px 0 0;
   background: white; }
 
 header {
@@ -1523,6 +1523,7 @@ section {
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
+  padding: 0 100px;
   background-color: white; }
   section .section-header,
   section .section-body {
@@ -3328,6 +3329,11 @@ section.has-extra-pad-bottom,
 .section-body.has-extra-pad-bottom,
 .section-footer.has-extra-pad-bottom {
   padding-bottom: 7.5rem; }
+section.has-bg,
+.section-header.has-bg,
+.section-body.has-bg,
+.section-footer.has-bg {
+  background-color: #e8e7e6; }
 
 section.image .section-body.is-pos-left {
   text-align: left; }
