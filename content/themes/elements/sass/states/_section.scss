@@ -38,6 +38,10 @@
   &.has-bg{
     background-color: $grey-light;
   }
+
+  &.half{
+    min-height: 50vh;
+  }
 }
 
 section,

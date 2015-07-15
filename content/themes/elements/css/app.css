@@ -3334,6 +3334,11 @@ section.has-bg,
 .section-body.has-bg,
 .section-footer.has-bg {
   background-color: #e8e7e6; }
+section.half,
+.section-header.half,
+.section-body.half,
+.section-footer.half {
+  min-height: 50vh; }
 
 section.image .section-body.is-pos-left {
   text-align: left; }

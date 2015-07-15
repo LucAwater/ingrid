@@ -15,10 +15,11 @@ get_header();
 
   echo '</div>';
 
-  // Left text
-  // $left_text = get_field( 'left_text' );
-  //
-  // echo '<div class="aside-text">' . $left_text . '</div>';
+  // Logo
+  echo
+  '<div class="aside-logo">
+    <img src="' . get_template_directory_uri() . '/img/logo-light.svg">
+  </div>';
   ?>
 </aside>
 
