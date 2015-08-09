@@ -31,3 +31,16 @@ section{
     margin-bottom: $section-spacing / 4;
   }
 }
+
+@media #{$medium-down}{
+  section{
+    min-height: 0;
+    padding: 0 50px;
+  }
+}
+
+@media #{$small-only}{
+  section{
+    padding: 0 30px;
+  }
+}

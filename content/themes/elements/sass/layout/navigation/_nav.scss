@@ -32,3 +32,9 @@ nav ul{
     text-decoration: underline;
   }
 }
+
+@media #{$medium-down}{
+  nav{
+    width: 100%;
+  }
+}

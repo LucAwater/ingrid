@@ -12,3 +12,9 @@ section.playlist{
     }
   }
 }
+
+@media #{$small-only}{
+  section.playlist{
+    padding: 0;
+  }
+}
