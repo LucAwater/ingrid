@@ -38,3 +38,9 @@ nav ul{
     width: 100%;
   }
 }
+
+@media #{$small-only}{
+  nav{
+    display: none;
+  }
+}
