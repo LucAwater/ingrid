@@ -10,6 +10,7 @@ aside{
   float: left;
 
   width: 40%;
+  height: 100vh;
 }
 
 main{
@@ -18,4 +19,19 @@ main{
   width: 60%;
 
   background-color: $grey-lighter;
+}
+
+@media #{$medium-down}{
+  aside,
+  main{
+    width: 100%;
+    min-height: 0;
+  }
+
+  aside{
+    position: relative;
+
+    width: 100%;
+    height: 60%;
+  }
 }
