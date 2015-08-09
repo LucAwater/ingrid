@@ -28,6 +28,10 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
 
+  <!-- Fonts from Typekit -->
+  <script src="//use.typekit.net/hls3dri.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
   <!-- WP_HEAD() -->
   <?php wp_head(); ?>
 </head>

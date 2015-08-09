@@ -1,0 +1,17 @@
+aside{
+  height: 100vh;
+}
+
+// Aside images
+aside .aside-images{
+  height: 100%;
+
+  li{
+    height: 100%;
+    display: block;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}

@@ -1,8 +1,9 @@
 %base{
-  @include opensans;
+  @include proxima;
   font-size: 16px;
   font-weight: normal;
   text-rendering: geometricPrecision;
+  color: $black;
 }
 
 h1{
@@ -17,15 +18,25 @@ h2{
 
 p{
   @extend %base;
+
+  line-height: 1.4;
 }
 
 a{
   @extend %base;
-  
-  color: black;
-  text-decoration: underline;
+
+  color: $black;
+  font-weight: 300;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  text-transform: uppercase;
   cursor: pointer;
-  
+
+  &:hover,
+  &:focus{
+    color: $pink;
+  }
+
   &.link-h1,
   &.link-h2,
   &.link-h3,

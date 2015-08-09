@@ -1,12 +1,27 @@
-nav ul{
-  display: inline;
-  
-  li{
-    display: inline-block;
-    padding-right: 1em;
-    
-    a{
-      text-decoration: none;
+nav{
+  top: 0;
+  right: 0;
+  position: fixed;
+  z-index: $zIndex-nav;
+
+  width: 60%;
+  height: 50px;
+
+  background-color: $black;
+  text-align: center;
+
+  ul{
+    display: inline;
+
+    line-height: 50px;
+
+    li{
+      display: inline-block;
+      margin: 0 2em;
+
+      a{
+        color: $white;
+      }
     }
   }
 }

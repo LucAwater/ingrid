@@ -9,7 +9,7 @@ body.is-loading{
   background: url('../img/logo.svg') center center no-repeat;
   background-size: 200px;
   background-attachment: fixed;
-  
+
   > *{
     @include hide( 0s );
   }

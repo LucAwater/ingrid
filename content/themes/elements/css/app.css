@@ -1,4 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
 [class*="grid-"] {
   display: block;
   padding: 0;
@@ -1320,13 +1319,12 @@ ul {
   margin-bottom: 6.25rem !important; }
 
 h1, h2, p, a {
-  font-family: 'Open Sans', sans-serif;
-  font-style: normal;
+  font-family: "proxima-nova", sans-serif;
+  font-weight: normal;
   font-size: 16px;
   font-weight: normal;
-  text-rendering: geometricPrecision; }
-  h1.is_bold, h2.is_bold, p.is_bold, a.is_bold {
-    font-weight: 700; }
+  text-rendering: geometricPrecision;
+  color: #333333; }
 
 h1, h2 {
   font-size: 3em; }
@@ -1334,10 +1332,18 @@ h1, h2 {
 h2 {
   font-size: 2em; }
 
+p {
+  line-height: 1.4; }
+
 a {
-  color: black;
-  text-decoration: underline;
+  color: #333333;
+  font-weight: 300;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  text-transform: uppercase;
   cursor: pointer; }
+  a:hover, a:focus {
+    color: #dd2663; }
   a.link-h1, a.link-h2, a.link-h3, a.link-p {
     text-decoration: none; }
 
@@ -1347,31 +1353,30 @@ body {
   min-height: 100%;
   background: white; }
 
-header {
-  padding-left: 3.75rem;
-  padding-right: 3.75rem; }
-
-main,
-footer {
-  padding-left: 2.8125rem;
-  padding-right: 2.8125rem; }
-
-@media only screen and (max-width: 31.25em) {
-  header {
-    padding-left: 1.875rem;
-    padding-right: 1.875rem; }
-
-  main,
-  footer {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem; } }
+aside,
 main {
+  height: auto;
+  min-height: 100%; }
+
+aside {
+  top: 0;
+  position: fixed;
+  float: left;
+  width: 40%; }
+
+main {
+  float: right;
+  width: 60%;
+  background-color: #f3f4f5; }
+
+main {
+  z-index: 900;
   height: auto !important;
   height: 100%;
   min-height: 100%;
   overflow: hidden;
-  background: white;
-  z-index: 900; }
+  padding: 50px 0 0;
+  background: white; }
 
 header {
   display: -webkit-box;
@@ -1404,7 +1409,7 @@ header {
 footer {
   z-index: 1100;
   padding: 50px;
-  background: black;
+  background: #333333;
   text-align: center; }
   footer > img {
     max-width: 250px;
@@ -1416,6 +1421,18 @@ footer {
     padding: 0 .5em;
     display: inline-block; }
 
+aside {
+  height: 100vh; }
+
+aside .aside-images {
+  height: 100%; }
+  aside .aside-images li {
+    height: 100%;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; }
+
 a.trigger-menu {
   width: 35px;
   height: 35px;
@@ -1426,13 +1443,13 @@ a.trigger-menu {
     height: 3px;
     display: block;
     top: calc(50% - 1.5px);
-    background: black; }
+    background: #333333; }
     a.trigger-menu i:before, a.trigger-menu i:after {
       content: " ";
       position: absolute;
       width: 100%;
       height: 100%;
-      background: black;
+      background: #333333;
       transition: .2s; }
     a.trigger-menu i:before {
       margin-top: -8px; }
@@ -1458,305 +1475,1637 @@ a.trigger-menu:hover i:after {
 a.trigger-menu:focus i:before {
   -webkit-animation: activebefore .4s linear; }
 
-nav ul {
-  display: inline; }
-  nav ul li {
-    display: inline-block;
-    padding-right: 1em; }
-    nav ul li a {
-      text-decoration: none; }
+nav {
+  top: 0;
+  right: 0;
+  position: fixed;
+  z-index: 1100;
+  width: 60%;
+  height: 50px;
+  background-color: #333333;
+  text-align: center; }
+  nav ul {
+    display: inline;
+    line-height: 50px; }
+    nav ul li {
+      display: inline-block;
+      margin: 0 2em; }
+      nav ul li a {
+        color: white; }
 
 nav ul li.current {
   text-decoration: underline; }
 
-.slider {
-  position: relative; }
-
-.slider-images {
-  height: 0;
-  padding-bottom: 50%; }
-
-.slider-images {
-  top: 0;
-  left: 0.9375rem;
-  position: relative;
-  width: calc(100% - 1.875rem);
-  overflow: hidden;
-  list-style: none; }
-  .slider-images li {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: .5s; }
-    .slider-images li img {
-      height: 100%;
-      width: auto;
-      max-width: none;
-      display: block;
-      top: 50%;
-      left: 50%;
-      -moz-transform: translate(-50%, -50%);
-      -o-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%); }
-    .slider-images li.is-active {
-      opacity: 1;
-      visibility: visible;
-      transition: .5s; }
-
-.slider-bullets {
-  position: absolute;
-  bottom: 1em;
-  width: 100%;
-  background: none;
-  text-align: center; }
-  .slider-bullets li {
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-    padding: 0 .2em; }
-    .slider-bullets li i {
-      display: block;
-      width: 0.5rem;
-      height: 0.5rem;
-      border-radius: 50%;
-      background: transparent;
-      border: thin solid black; }
-    .slider-bullets li.is-active i {
-      background-color: black; }
-
-/* Arrows */
-.slider-controls {
-  width: 100%;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
-  .slider-controls .arrow {
-    height: 100%;
-    width: 2.75rem;
-    position: absolute;
-    top: 0;
-    display: block;
-    cursor: pointer; }
-    .slider-controls .arrow i {
-      width: 1.25rem;
-      height: 1.25rem;
-      top: 50%;
-      left: 50%;
-      position: absolute;
-      cursor: pointer; }
-      .slider-controls .arrow i:before {
-        width: 0.1875rem;
-        height: 100%;
-        position: absolute;
-        background: black;
-        content: " "; }
-      .slider-controls .arrow i:after {
-        height: 0.1875rem;
-        width: 100%;
-        position: absolute;
-        background: black;
-        content: " "; }
-    .slider-controls .arrow.arrow-left {
-      left: 0;
-      margin-left: 2em;
-      -webkit-transform: rotate(-45deg); }
-      .slider-controls .arrow.arrow-left i {
-        background-position: -64px -32px; }
-    .slider-controls .arrow.arrow-right {
-      right: 0;
-      margin-right: 2em;
-      -webkit-transform: rotate(135deg); }
-      .slider-controls .arrow.arrow-right i {
-        background-position: -64px -64px; }
-
-.section-slider .section-content .slider-controls {
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s; }
-.section-slider .section-content:hover .slider-controls {
-  opacity: 1;
-  visibility: visible;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s; }
+.button {
+  height: 40px;
+  padding: 0 30px;
+  display: inline-block;
+  background-color: #dd2663;
+  border-radius: 22px;
+  color: white;
+  line-height: 40px;
+  text-decoration: none; }
+  .button:hover, .button:focus {
+    color: white;
+    background-color: #c81e50; }
 
 section {
-  height: auto;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flex;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  width: 100%;
+  min-height: 100vh;
   overflow: hidden;
-  padding-top: 3.75rem;
-  padding-bottom: 3.75rem;
-  background: white; }
+  padding: 0 100px;
+  background-color: white; }
   section .section-header,
   section .section-body {
+    width: 100%;
     clear: both; }
   section .section-header {
     margin-bottom: 1.875rem; }
-
-main section:first-child {
-  padding-top: 7.5rem; }
-
-main section:last-child {
-  padding-bottom: 7.5rem; }
+  section .section-body {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem; }
 
 .section-header {
-  max-width: 600px; }
+  max-width: 500px; }
   .section-header h2 {
     margin-bottom: 0.9375rem; }
-
-section.hero {
-  height: 90vh;
-  overflow: hidden; }
-  section.hero .hero-banner {
-    position: fixed;
-    overflow: hidden; }
-  section.hero .section-body {
-    top: 50%;
-    left: 50%;
-    margin: auto;
-    position: absolute;
-    -moz-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
-
-.arrow-scroll {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  background: white;
-  border-radius: 100%;
-  left: 0;
-  right: 0;
-  margin: auto;
-  z-index: 1100; }
-  .arrow-scroll img {
-    width: 30px;
-    top: 20px;
-    left: 15px;
-    position: absolute;
-    z-index: 1100;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-    -moz-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg); }
-  .arrow-scroll:hover img {
-    top: 25px;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s; }
-
-body.is-mobile section.hero .hero-banner {
-  position: relative; }
 
 section.text {
   text-align: center; }
   section.text .section-body {
-    max-width: 600px;
+    max-width: 500px;
     margin: auto; }
     section.text .section-body h2,
-    section.text .section-body p,
-    section.text .section-body a {
+    section.text .section-body p {
       margin-bottom: 1em; }
+    section.text .section-body p span {
+      text-decoration: none !important;
+      border-bottom: thin dotted #333333; }
+    section.text .section-body .button {
+      margin-top: 1em; }
 
-section.image .section-body figure {
-  display: inline-block;
-  text-align: left; }
+section.playlist ul li {
+  height: 100px;
+  padding: 0 25px;
+  border-bottom: thin solid #e8e7e6; }
+  section.playlist ul li p {
+    line-height: 100px; }
 
-section.grid ul {
-  width: 100%; }
-  section.grid ul li {
-    margin-bottom: 50px; }
-    section.grid ul li > * {
-      margin-bottom: 15px; }
-    section.grid ul li img {
-      min-width: 100%;
-      display: block; }
-
-@media only screen and (min-width: 62.563em) {
-  .l-grid-4 li:nth-last-child(-n + 4) {
-    margin-bottom: 0; }
-
-  .l-grid-3 li:nth-last-child(-n + 3) {
-    margin-bottom: 0; }
-
-  .l-grid-2 li:nth-last-child(-n + 2) {
-    margin-bottom: 0; }
-
-  .l-grid-1 li:nth-last-child(-n + 1) {
-    margin-bottom: 0; } }
-@media only screen and (min-width: 31.313em) and (max-width: 62.5em) {
-  .m-grid-4 li:nth-last-child(-n + 4) {
-    margin-bottom: 0; }
-
-  .m-grid-3 li:nth-last-child(-n + 3) {
-    margin-bottom: 0; }
-
-  .m-grid-2 li:nth-last-child(-n + 2) {
-    margin-bottom: 0; }
-
-  .m-grid-1 li:nth-last-child(-n + 1) {
-    margin-bottom: 0; } }
-@media only screen and (max-width: 31.25em) {
-  .s-grid-4 li:nth-last-child(-n + 4) {
-    margin-bottom: 0; }
-
-  .s-grid-3 li:nth-last-child(-n + 3) {
-    margin-bottom: 0; }
-
-  .s-grid-2 li:nth-last-child(-n + 2) {
-    margin-bottom: 0; }
-
-  .s-grid-1 li:nth-last-child(-n + 1) {
-    margin-bottom: 0; } }
-section.grid ul.isotope-masonry li:nth-child(n) {
-  margin-bottom: 1.875rem; }
-  section.grid ul.isotope-masonry li:nth-child(n) img {
-    margin-bottom: 0; }
-
-@media screen and (min-width: 1400px) {
-  section.grid ul li {
-    width: 25%; } }
-section.parallax .section-body,
-.bcg {
+ul li {
   height: 0;
-  padding-bottom: 50% !important; }
-
-.section-parallax {
-  width: 100%;
-  z-index: 1000; }
-
-.bcg {
-  background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-size: cover;
-  width: 100%; }
+  background-position: center center; }
+  ul li.r30 {
+    padding-bottom: 30%; }
+  ul li.r50 {
+    padding-bottom: 50%; }
+  ul li.r70 {
+    padding-bottom: 70%; }
+  ul li.text {
+    height: 500px;
+    background: #e8e7e6; }
+
+.progress-container {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  overflow: hidden; }
+
+progress {
+  -webkit-appearance: none;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 0; }
+
+progress::-webkit-progress-bar {
+  border-radius: 100%;
+  background: white;
+  border: thin solid #333333; }
+
+progress::-webkit-progress-value {
+  position: absolute;
+  background-color: transparent;
+  width: 200px !important;
+  height: 100px !important;
+  overflow: hidden; }
+  progress::-webkit-progress-value:before {
+    content: '';
+    width: 24px !important;
+    height: 48px !important;
+    border-radius: 50px 0 0 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #333333;
+    -webkit-transform-origin: right center;
+    -moz-transform-origin: right center;
+    transform-origin: right center;
+    -moz-transform: scale(1) rotate(0deg) translateX(0) translateY(100%);
+    -o-transform: scale(1) rotate(0deg) translateX(0) translateY(100%);
+    -ms-transform: scale(1) rotate(0deg) translateX(0) translateY(100%);
+    -webkit-transform: scale(1) rotate(0deg) translateX(0) translateY(100%);
+    transform: scale(1) rotate(0deg) translateX(0) translateY(100%); }
+
+progress[value="0"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(0deg);
+  -o-transform: scale(1) rotate(0deg);
+  -ms-transform: scale(1) rotate(0deg);
+  -webkit-transform: scale(1) rotate(0deg);
+  transform: scale(1) rotate(0deg); }
+
+progress[value="1"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(1.8deg);
+  -o-transform: scale(1) rotate(1.8deg);
+  -ms-transform: scale(1) rotate(1.8deg);
+  -webkit-transform: scale(1) rotate(1.8deg);
+  transform: scale(1) rotate(1.8deg); }
+
+progress[value="2"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(3.6deg);
+  -o-transform: scale(1) rotate(3.6deg);
+  -ms-transform: scale(1) rotate(3.6deg);
+  -webkit-transform: scale(1) rotate(3.6deg);
+  transform: scale(1) rotate(3.6deg); }
+
+progress[value="3"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(5.4deg);
+  -o-transform: scale(1) rotate(5.4deg);
+  -ms-transform: scale(1) rotate(5.4deg);
+  -webkit-transform: scale(1) rotate(5.4deg);
+  transform: scale(1) rotate(5.4deg); }
+
+progress[value="4"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(7.2deg);
+  -o-transform: scale(1) rotate(7.2deg);
+  -ms-transform: scale(1) rotate(7.2deg);
+  -webkit-transform: scale(1) rotate(7.2deg);
+  transform: scale(1) rotate(7.2deg); }
+
+progress[value="5"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(9deg);
+  -o-transform: scale(1) rotate(9deg);
+  -ms-transform: scale(1) rotate(9deg);
+  -webkit-transform: scale(1) rotate(9deg);
+  transform: scale(1) rotate(9deg); }
+
+progress[value="6"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(10.8deg);
+  -o-transform: scale(1) rotate(10.8deg);
+  -ms-transform: scale(1) rotate(10.8deg);
+  -webkit-transform: scale(1) rotate(10.8deg);
+  transform: scale(1) rotate(10.8deg); }
+
+progress[value="7"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(12.6deg);
+  -o-transform: scale(1) rotate(12.6deg);
+  -ms-transform: scale(1) rotate(12.6deg);
+  -webkit-transform: scale(1) rotate(12.6deg);
+  transform: scale(1) rotate(12.6deg); }
+
+progress[value="8"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(14.4deg);
+  -o-transform: scale(1) rotate(14.4deg);
+  -ms-transform: scale(1) rotate(14.4deg);
+  -webkit-transform: scale(1) rotate(14.4deg);
+  transform: scale(1) rotate(14.4deg); }
+
+progress[value="9"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(16.2deg);
+  -o-transform: scale(1) rotate(16.2deg);
+  -ms-transform: scale(1) rotate(16.2deg);
+  -webkit-transform: scale(1) rotate(16.2deg);
+  transform: scale(1) rotate(16.2deg); }
+
+progress[value="10"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(18deg);
+  -o-transform: scale(1) rotate(18deg);
+  -ms-transform: scale(1) rotate(18deg);
+  -webkit-transform: scale(1) rotate(18deg);
+  transform: scale(1) rotate(18deg); }
+
+progress[value="11"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(19.8deg);
+  -o-transform: scale(1) rotate(19.8deg);
+  -ms-transform: scale(1) rotate(19.8deg);
+  -webkit-transform: scale(1) rotate(19.8deg);
+  transform: scale(1) rotate(19.8deg); }
+
+progress[value="12"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(21.6deg);
+  -o-transform: scale(1) rotate(21.6deg);
+  -ms-transform: scale(1) rotate(21.6deg);
+  -webkit-transform: scale(1) rotate(21.6deg);
+  transform: scale(1) rotate(21.6deg); }
+
+progress[value="13"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(23.4deg);
+  -o-transform: scale(1) rotate(23.4deg);
+  -ms-transform: scale(1) rotate(23.4deg);
+  -webkit-transform: scale(1) rotate(23.4deg);
+  transform: scale(1) rotate(23.4deg); }
+
+progress[value="14"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(25.2deg);
+  -o-transform: scale(1) rotate(25.2deg);
+  -ms-transform: scale(1) rotate(25.2deg);
+  -webkit-transform: scale(1) rotate(25.2deg);
+  transform: scale(1) rotate(25.2deg); }
+
+progress[value="15"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(27deg);
+  -o-transform: scale(1) rotate(27deg);
+  -ms-transform: scale(1) rotate(27deg);
+  -webkit-transform: scale(1) rotate(27deg);
+  transform: scale(1) rotate(27deg); }
+
+progress[value="16"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(28.8deg);
+  -o-transform: scale(1) rotate(28.8deg);
+  -ms-transform: scale(1) rotate(28.8deg);
+  -webkit-transform: scale(1) rotate(28.8deg);
+  transform: scale(1) rotate(28.8deg); }
+
+progress[value="17"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(30.6deg);
+  -o-transform: scale(1) rotate(30.6deg);
+  -ms-transform: scale(1) rotate(30.6deg);
+  -webkit-transform: scale(1) rotate(30.6deg);
+  transform: scale(1) rotate(30.6deg); }
+
+progress[value="18"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(32.4deg);
+  -o-transform: scale(1) rotate(32.4deg);
+  -ms-transform: scale(1) rotate(32.4deg);
+  -webkit-transform: scale(1) rotate(32.4deg);
+  transform: scale(1) rotate(32.4deg); }
+
+progress[value="19"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(34.2deg);
+  -o-transform: scale(1) rotate(34.2deg);
+  -ms-transform: scale(1) rotate(34.2deg);
+  -webkit-transform: scale(1) rotate(34.2deg);
+  transform: scale(1) rotate(34.2deg); }
+
+progress[value="20"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(36deg);
+  -o-transform: scale(1) rotate(36deg);
+  -ms-transform: scale(1) rotate(36deg);
+  -webkit-transform: scale(1) rotate(36deg);
+  transform: scale(1) rotate(36deg); }
+
+progress[value="21"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(37.8deg);
+  -o-transform: scale(1) rotate(37.8deg);
+  -ms-transform: scale(1) rotate(37.8deg);
+  -webkit-transform: scale(1) rotate(37.8deg);
+  transform: scale(1) rotate(37.8deg); }
+
+progress[value="22"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(39.6deg);
+  -o-transform: scale(1) rotate(39.6deg);
+  -ms-transform: scale(1) rotate(39.6deg);
+  -webkit-transform: scale(1) rotate(39.6deg);
+  transform: scale(1) rotate(39.6deg); }
+
+progress[value="23"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(41.4deg);
+  -o-transform: scale(1) rotate(41.4deg);
+  -ms-transform: scale(1) rotate(41.4deg);
+  -webkit-transform: scale(1) rotate(41.4deg);
+  transform: scale(1) rotate(41.4deg); }
+
+progress[value="24"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(43.2deg);
+  -o-transform: scale(1) rotate(43.2deg);
+  -ms-transform: scale(1) rotate(43.2deg);
+  -webkit-transform: scale(1) rotate(43.2deg);
+  transform: scale(1) rotate(43.2deg); }
+
+progress[value="25"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(45deg);
+  -o-transform: scale(1) rotate(45deg);
+  -ms-transform: scale(1) rotate(45deg);
+  -webkit-transform: scale(1) rotate(45deg);
+  transform: scale(1) rotate(45deg); }
+
+progress[value="26"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(46.8deg);
+  -o-transform: scale(1) rotate(46.8deg);
+  -ms-transform: scale(1) rotate(46.8deg);
+  -webkit-transform: scale(1) rotate(46.8deg);
+  transform: scale(1) rotate(46.8deg); }
+
+progress[value="27"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(48.6deg);
+  -o-transform: scale(1) rotate(48.6deg);
+  -ms-transform: scale(1) rotate(48.6deg);
+  -webkit-transform: scale(1) rotate(48.6deg);
+  transform: scale(1) rotate(48.6deg); }
+
+progress[value="28"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(50.4deg);
+  -o-transform: scale(1) rotate(50.4deg);
+  -ms-transform: scale(1) rotate(50.4deg);
+  -webkit-transform: scale(1) rotate(50.4deg);
+  transform: scale(1) rotate(50.4deg); }
+
+progress[value="29"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(52.2deg);
+  -o-transform: scale(1) rotate(52.2deg);
+  -ms-transform: scale(1) rotate(52.2deg);
+  -webkit-transform: scale(1) rotate(52.2deg);
+  transform: scale(1) rotate(52.2deg); }
+
+progress[value="30"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(54deg);
+  -o-transform: scale(1) rotate(54deg);
+  -ms-transform: scale(1) rotate(54deg);
+  -webkit-transform: scale(1) rotate(54deg);
+  transform: scale(1) rotate(54deg); }
+
+progress[value="31"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(55.8deg);
+  -o-transform: scale(1) rotate(55.8deg);
+  -ms-transform: scale(1) rotate(55.8deg);
+  -webkit-transform: scale(1) rotate(55.8deg);
+  transform: scale(1) rotate(55.8deg); }
+
+progress[value="32"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(57.6deg);
+  -o-transform: scale(1) rotate(57.6deg);
+  -ms-transform: scale(1) rotate(57.6deg);
+  -webkit-transform: scale(1) rotate(57.6deg);
+  transform: scale(1) rotate(57.6deg); }
+
+progress[value="33"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(59.4deg);
+  -o-transform: scale(1) rotate(59.4deg);
+  -ms-transform: scale(1) rotate(59.4deg);
+  -webkit-transform: scale(1) rotate(59.4deg);
+  transform: scale(1) rotate(59.4deg); }
+
+progress[value="34"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(61.2deg);
+  -o-transform: scale(1) rotate(61.2deg);
+  -ms-transform: scale(1) rotate(61.2deg);
+  -webkit-transform: scale(1) rotate(61.2deg);
+  transform: scale(1) rotate(61.2deg); }
+
+progress[value="35"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(63deg);
+  -o-transform: scale(1) rotate(63deg);
+  -ms-transform: scale(1) rotate(63deg);
+  -webkit-transform: scale(1) rotate(63deg);
+  transform: scale(1) rotate(63deg); }
+
+progress[value="36"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(64.8deg);
+  -o-transform: scale(1) rotate(64.8deg);
+  -ms-transform: scale(1) rotate(64.8deg);
+  -webkit-transform: scale(1) rotate(64.8deg);
+  transform: scale(1) rotate(64.8deg); }
+
+progress[value="37"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(66.6deg);
+  -o-transform: scale(1) rotate(66.6deg);
+  -ms-transform: scale(1) rotate(66.6deg);
+  -webkit-transform: scale(1) rotate(66.6deg);
+  transform: scale(1) rotate(66.6deg); }
+
+progress[value="38"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(68.4deg);
+  -o-transform: scale(1) rotate(68.4deg);
+  -ms-transform: scale(1) rotate(68.4deg);
+  -webkit-transform: scale(1) rotate(68.4deg);
+  transform: scale(1) rotate(68.4deg); }
+
+progress[value="39"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(70.2deg);
+  -o-transform: scale(1) rotate(70.2deg);
+  -ms-transform: scale(1) rotate(70.2deg);
+  -webkit-transform: scale(1) rotate(70.2deg);
+  transform: scale(1) rotate(70.2deg); }
+
+progress[value="40"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(72deg);
+  -o-transform: scale(1) rotate(72deg);
+  -ms-transform: scale(1) rotate(72deg);
+  -webkit-transform: scale(1) rotate(72deg);
+  transform: scale(1) rotate(72deg); }
+
+progress[value="41"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(73.8deg);
+  -o-transform: scale(1) rotate(73.8deg);
+  -ms-transform: scale(1) rotate(73.8deg);
+  -webkit-transform: scale(1) rotate(73.8deg);
+  transform: scale(1) rotate(73.8deg); }
+
+progress[value="42"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(75.6deg);
+  -o-transform: scale(1) rotate(75.6deg);
+  -ms-transform: scale(1) rotate(75.6deg);
+  -webkit-transform: scale(1) rotate(75.6deg);
+  transform: scale(1) rotate(75.6deg); }
+
+progress[value="43"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(77.4deg);
+  -o-transform: scale(1) rotate(77.4deg);
+  -ms-transform: scale(1) rotate(77.4deg);
+  -webkit-transform: scale(1) rotate(77.4deg);
+  transform: scale(1) rotate(77.4deg); }
+
+progress[value="44"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(79.2deg);
+  -o-transform: scale(1) rotate(79.2deg);
+  -ms-transform: scale(1) rotate(79.2deg);
+  -webkit-transform: scale(1) rotate(79.2deg);
+  transform: scale(1) rotate(79.2deg); }
+
+progress[value="45"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(81deg);
+  -o-transform: scale(1) rotate(81deg);
+  -ms-transform: scale(1) rotate(81deg);
+  -webkit-transform: scale(1) rotate(81deg);
+  transform: scale(1) rotate(81deg); }
+
+progress[value="46"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(82.8deg);
+  -o-transform: scale(1) rotate(82.8deg);
+  -ms-transform: scale(1) rotate(82.8deg);
+  -webkit-transform: scale(1) rotate(82.8deg);
+  transform: scale(1) rotate(82.8deg); }
+
+progress[value="47"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(84.6deg);
+  -o-transform: scale(1) rotate(84.6deg);
+  -ms-transform: scale(1) rotate(84.6deg);
+  -webkit-transform: scale(1) rotate(84.6deg);
+  transform: scale(1) rotate(84.6deg); }
+
+progress[value="48"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(86.4deg);
+  -o-transform: scale(1) rotate(86.4deg);
+  -ms-transform: scale(1) rotate(86.4deg);
+  -webkit-transform: scale(1) rotate(86.4deg);
+  transform: scale(1) rotate(86.4deg); }
+
+progress[value="49"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(88.2deg);
+  -o-transform: scale(1) rotate(88.2deg);
+  -ms-transform: scale(1) rotate(88.2deg);
+  -webkit-transform: scale(1) rotate(88.2deg);
+  transform: scale(1) rotate(88.2deg); }
+
+progress[value="50"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(90deg);
+  -o-transform: scale(1) rotate(90deg);
+  -ms-transform: scale(1) rotate(90deg);
+  -webkit-transform: scale(1) rotate(90deg);
+  transform: scale(1) rotate(90deg); }
+
+progress[value="51"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(91.8deg);
+  -o-transform: scale(1) rotate(91.8deg);
+  -ms-transform: scale(1) rotate(91.8deg);
+  -webkit-transform: scale(1) rotate(91.8deg);
+  transform: scale(1) rotate(91.8deg); }
+
+progress[value="52"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(93.6deg);
+  -o-transform: scale(1) rotate(93.6deg);
+  -ms-transform: scale(1) rotate(93.6deg);
+  -webkit-transform: scale(1) rotate(93.6deg);
+  transform: scale(1) rotate(93.6deg); }
+
+progress[value="53"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(95.4deg);
+  -o-transform: scale(1) rotate(95.4deg);
+  -ms-transform: scale(1) rotate(95.4deg);
+  -webkit-transform: scale(1) rotate(95.4deg);
+  transform: scale(1) rotate(95.4deg); }
+
+progress[value="54"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(97.2deg);
+  -o-transform: scale(1) rotate(97.2deg);
+  -ms-transform: scale(1) rotate(97.2deg);
+  -webkit-transform: scale(1) rotate(97.2deg);
+  transform: scale(1) rotate(97.2deg); }
+
+progress[value="55"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(99deg);
+  -o-transform: scale(1) rotate(99deg);
+  -ms-transform: scale(1) rotate(99deg);
+  -webkit-transform: scale(1) rotate(99deg);
+  transform: scale(1) rotate(99deg); }
+
+progress[value="56"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(100.8deg);
+  -o-transform: scale(1) rotate(100.8deg);
+  -ms-transform: scale(1) rotate(100.8deg);
+  -webkit-transform: scale(1) rotate(100.8deg);
+  transform: scale(1) rotate(100.8deg); }
+
+progress[value="57"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(102.6deg);
+  -o-transform: scale(1) rotate(102.6deg);
+  -ms-transform: scale(1) rotate(102.6deg);
+  -webkit-transform: scale(1) rotate(102.6deg);
+  transform: scale(1) rotate(102.6deg); }
+
+progress[value="58"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(104.4deg);
+  -o-transform: scale(1) rotate(104.4deg);
+  -ms-transform: scale(1) rotate(104.4deg);
+  -webkit-transform: scale(1) rotate(104.4deg);
+  transform: scale(1) rotate(104.4deg); }
+
+progress[value="59"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(106.2deg);
+  -o-transform: scale(1) rotate(106.2deg);
+  -ms-transform: scale(1) rotate(106.2deg);
+  -webkit-transform: scale(1) rotate(106.2deg);
+  transform: scale(1) rotate(106.2deg); }
+
+progress[value="60"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(108deg);
+  -o-transform: scale(1) rotate(108deg);
+  -ms-transform: scale(1) rotate(108deg);
+  -webkit-transform: scale(1) rotate(108deg);
+  transform: scale(1) rotate(108deg); }
+
+progress[value="61"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(109.8deg);
+  -o-transform: scale(1) rotate(109.8deg);
+  -ms-transform: scale(1) rotate(109.8deg);
+  -webkit-transform: scale(1) rotate(109.8deg);
+  transform: scale(1) rotate(109.8deg); }
+
+progress[value="62"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(111.6deg);
+  -o-transform: scale(1) rotate(111.6deg);
+  -ms-transform: scale(1) rotate(111.6deg);
+  -webkit-transform: scale(1) rotate(111.6deg);
+  transform: scale(1) rotate(111.6deg); }
+
+progress[value="63"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(113.4deg);
+  -o-transform: scale(1) rotate(113.4deg);
+  -ms-transform: scale(1) rotate(113.4deg);
+  -webkit-transform: scale(1) rotate(113.4deg);
+  transform: scale(1) rotate(113.4deg); }
+
+progress[value="64"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(115.2deg);
+  -o-transform: scale(1) rotate(115.2deg);
+  -ms-transform: scale(1) rotate(115.2deg);
+  -webkit-transform: scale(1) rotate(115.2deg);
+  transform: scale(1) rotate(115.2deg); }
+
+progress[value="65"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(117deg);
+  -o-transform: scale(1) rotate(117deg);
+  -ms-transform: scale(1) rotate(117deg);
+  -webkit-transform: scale(1) rotate(117deg);
+  transform: scale(1) rotate(117deg); }
+
+progress[value="66"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(118.8deg);
+  -o-transform: scale(1) rotate(118.8deg);
+  -ms-transform: scale(1) rotate(118.8deg);
+  -webkit-transform: scale(1) rotate(118.8deg);
+  transform: scale(1) rotate(118.8deg); }
+
+progress[value="67"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(120.6deg);
+  -o-transform: scale(1) rotate(120.6deg);
+  -ms-transform: scale(1) rotate(120.6deg);
+  -webkit-transform: scale(1) rotate(120.6deg);
+  transform: scale(1) rotate(120.6deg); }
+
+progress[value="68"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(122.4deg);
+  -o-transform: scale(1) rotate(122.4deg);
+  -ms-transform: scale(1) rotate(122.4deg);
+  -webkit-transform: scale(1) rotate(122.4deg);
+  transform: scale(1) rotate(122.4deg); }
+
+progress[value="69"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(124.2deg);
+  -o-transform: scale(1) rotate(124.2deg);
+  -ms-transform: scale(1) rotate(124.2deg);
+  -webkit-transform: scale(1) rotate(124.2deg);
+  transform: scale(1) rotate(124.2deg); }
+
+progress[value="70"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(126deg);
+  -o-transform: scale(1) rotate(126deg);
+  -ms-transform: scale(1) rotate(126deg);
+  -webkit-transform: scale(1) rotate(126deg);
+  transform: scale(1) rotate(126deg); }
+
+progress[value="71"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(127.8deg);
+  -o-transform: scale(1) rotate(127.8deg);
+  -ms-transform: scale(1) rotate(127.8deg);
+  -webkit-transform: scale(1) rotate(127.8deg);
+  transform: scale(1) rotate(127.8deg); }
+
+progress[value="72"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(129.6deg);
+  -o-transform: scale(1) rotate(129.6deg);
+  -ms-transform: scale(1) rotate(129.6deg);
+  -webkit-transform: scale(1) rotate(129.6deg);
+  transform: scale(1) rotate(129.6deg); }
+
+progress[value="73"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(131.4deg);
+  -o-transform: scale(1) rotate(131.4deg);
+  -ms-transform: scale(1) rotate(131.4deg);
+  -webkit-transform: scale(1) rotate(131.4deg);
+  transform: scale(1) rotate(131.4deg); }
+
+progress[value="74"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(133.2deg);
+  -o-transform: scale(1) rotate(133.2deg);
+  -ms-transform: scale(1) rotate(133.2deg);
+  -webkit-transform: scale(1) rotate(133.2deg);
+  transform: scale(1) rotate(133.2deg); }
+
+progress[value="75"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(135deg);
+  -o-transform: scale(1) rotate(135deg);
+  -ms-transform: scale(1) rotate(135deg);
+  -webkit-transform: scale(1) rotate(135deg);
+  transform: scale(1) rotate(135deg); }
+
+progress[value="76"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(136.8deg);
+  -o-transform: scale(1) rotate(136.8deg);
+  -ms-transform: scale(1) rotate(136.8deg);
+  -webkit-transform: scale(1) rotate(136.8deg);
+  transform: scale(1) rotate(136.8deg); }
+
+progress[value="77"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(138.6deg);
+  -o-transform: scale(1) rotate(138.6deg);
+  -ms-transform: scale(1) rotate(138.6deg);
+  -webkit-transform: scale(1) rotate(138.6deg);
+  transform: scale(1) rotate(138.6deg); }
+
+progress[value="78"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(140.4deg);
+  -o-transform: scale(1) rotate(140.4deg);
+  -ms-transform: scale(1) rotate(140.4deg);
+  -webkit-transform: scale(1) rotate(140.4deg);
+  transform: scale(1) rotate(140.4deg); }
+
+progress[value="79"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(142.2deg);
+  -o-transform: scale(1) rotate(142.2deg);
+  -ms-transform: scale(1) rotate(142.2deg);
+  -webkit-transform: scale(1) rotate(142.2deg);
+  transform: scale(1) rotate(142.2deg); }
+
+progress[value="80"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(144deg);
+  -o-transform: scale(1) rotate(144deg);
+  -ms-transform: scale(1) rotate(144deg);
+  -webkit-transform: scale(1) rotate(144deg);
+  transform: scale(1) rotate(144deg); }
+
+progress[value="81"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(145.8deg);
+  -o-transform: scale(1) rotate(145.8deg);
+  -ms-transform: scale(1) rotate(145.8deg);
+  -webkit-transform: scale(1) rotate(145.8deg);
+  transform: scale(1) rotate(145.8deg); }
+
+progress[value="82"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(147.6deg);
+  -o-transform: scale(1) rotate(147.6deg);
+  -ms-transform: scale(1) rotate(147.6deg);
+  -webkit-transform: scale(1) rotate(147.6deg);
+  transform: scale(1) rotate(147.6deg); }
+
+progress[value="83"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(149.4deg);
+  -o-transform: scale(1) rotate(149.4deg);
+  -ms-transform: scale(1) rotate(149.4deg);
+  -webkit-transform: scale(1) rotate(149.4deg);
+  transform: scale(1) rotate(149.4deg); }
+
+progress[value="84"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(151.2deg);
+  -o-transform: scale(1) rotate(151.2deg);
+  -ms-transform: scale(1) rotate(151.2deg);
+  -webkit-transform: scale(1) rotate(151.2deg);
+  transform: scale(1) rotate(151.2deg); }
+
+progress[value="85"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(153deg);
+  -o-transform: scale(1) rotate(153deg);
+  -ms-transform: scale(1) rotate(153deg);
+  -webkit-transform: scale(1) rotate(153deg);
+  transform: scale(1) rotate(153deg); }
+
+progress[value="86"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(154.8deg);
+  -o-transform: scale(1) rotate(154.8deg);
+  -ms-transform: scale(1) rotate(154.8deg);
+  -webkit-transform: scale(1) rotate(154.8deg);
+  transform: scale(1) rotate(154.8deg); }
+
+progress[value="87"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(156.6deg);
+  -o-transform: scale(1) rotate(156.6deg);
+  -ms-transform: scale(1) rotate(156.6deg);
+  -webkit-transform: scale(1) rotate(156.6deg);
+  transform: scale(1) rotate(156.6deg); }
+
+progress[value="88"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(158.4deg);
+  -o-transform: scale(1) rotate(158.4deg);
+  -ms-transform: scale(1) rotate(158.4deg);
+  -webkit-transform: scale(1) rotate(158.4deg);
+  transform: scale(1) rotate(158.4deg); }
+
+progress[value="89"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(160.2deg);
+  -o-transform: scale(1) rotate(160.2deg);
+  -ms-transform: scale(1) rotate(160.2deg);
+  -webkit-transform: scale(1) rotate(160.2deg);
+  transform: scale(1) rotate(160.2deg); }
+
+progress[value="90"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(162deg);
+  -o-transform: scale(1) rotate(162deg);
+  -ms-transform: scale(1) rotate(162deg);
+  -webkit-transform: scale(1) rotate(162deg);
+  transform: scale(1) rotate(162deg); }
+
+progress[value="91"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(163.8deg);
+  -o-transform: scale(1) rotate(163.8deg);
+  -ms-transform: scale(1) rotate(163.8deg);
+  -webkit-transform: scale(1) rotate(163.8deg);
+  transform: scale(1) rotate(163.8deg); }
+
+progress[value="92"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(165.6deg);
+  -o-transform: scale(1) rotate(165.6deg);
+  -ms-transform: scale(1) rotate(165.6deg);
+  -webkit-transform: scale(1) rotate(165.6deg);
+  transform: scale(1) rotate(165.6deg); }
+
+progress[value="93"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(167.4deg);
+  -o-transform: scale(1) rotate(167.4deg);
+  -ms-transform: scale(1) rotate(167.4deg);
+  -webkit-transform: scale(1) rotate(167.4deg);
+  transform: scale(1) rotate(167.4deg); }
+
+progress[value="94"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(169.2deg);
+  -o-transform: scale(1) rotate(169.2deg);
+  -ms-transform: scale(1) rotate(169.2deg);
+  -webkit-transform: scale(1) rotate(169.2deg);
+  transform: scale(1) rotate(169.2deg); }
+
+progress[value="95"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(171deg);
+  -o-transform: scale(1) rotate(171deg);
+  -ms-transform: scale(1) rotate(171deg);
+  -webkit-transform: scale(1) rotate(171deg);
+  transform: scale(1) rotate(171deg); }
+
+progress[value="96"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(172.8deg);
+  -o-transform: scale(1) rotate(172.8deg);
+  -ms-transform: scale(1) rotate(172.8deg);
+  -webkit-transform: scale(1) rotate(172.8deg);
+  transform: scale(1) rotate(172.8deg); }
+
+progress[value="97"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(174.6deg);
+  -o-transform: scale(1) rotate(174.6deg);
+  -ms-transform: scale(1) rotate(174.6deg);
+  -webkit-transform: scale(1) rotate(174.6deg);
+  transform: scale(1) rotate(174.6deg); }
+
+progress[value="98"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(176.4deg);
+  -o-transform: scale(1) rotate(176.4deg);
+  -ms-transform: scale(1) rotate(176.4deg);
+  -webkit-transform: scale(1) rotate(176.4deg);
+  transform: scale(1) rotate(176.4deg); }
+
+progress[value="99"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(178.2deg);
+  -o-transform: scale(1) rotate(178.2deg);
+  -ms-transform: scale(1) rotate(178.2deg);
+  -webkit-transform: scale(1) rotate(178.2deg);
+  transform: scale(1) rotate(178.2deg); }
+
+progress[value="100"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(180deg);
+  -o-transform: scale(1) rotate(180deg);
+  -ms-transform: scale(1) rotate(180deg);
+  -webkit-transform: scale(1) rotate(180deg);
+  transform: scale(1) rotate(180deg); }
+
+progress[value="101"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(181.8deg);
+  -o-transform: scale(1) rotate(181.8deg);
+  -ms-transform: scale(1) rotate(181.8deg);
+  -webkit-transform: scale(1) rotate(181.8deg);
+  transform: scale(1) rotate(181.8deg); }
+
+progress[value="102"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(183.6deg);
+  -o-transform: scale(1) rotate(183.6deg);
+  -ms-transform: scale(1) rotate(183.6deg);
+  -webkit-transform: scale(1) rotate(183.6deg);
+  transform: scale(1) rotate(183.6deg); }
+
+progress[value="103"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(185.4deg);
+  -o-transform: scale(1) rotate(185.4deg);
+  -ms-transform: scale(1) rotate(185.4deg);
+  -webkit-transform: scale(1) rotate(185.4deg);
+  transform: scale(1) rotate(185.4deg); }
+
+progress[value="104"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(187.2deg);
+  -o-transform: scale(1) rotate(187.2deg);
+  -ms-transform: scale(1) rotate(187.2deg);
+  -webkit-transform: scale(1) rotate(187.2deg);
+  transform: scale(1) rotate(187.2deg); }
+
+progress[value="105"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(189deg);
+  -o-transform: scale(1) rotate(189deg);
+  -ms-transform: scale(1) rotate(189deg);
+  -webkit-transform: scale(1) rotate(189deg);
+  transform: scale(1) rotate(189deg); }
+
+progress[value="106"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(190.8deg);
+  -o-transform: scale(1) rotate(190.8deg);
+  -ms-transform: scale(1) rotate(190.8deg);
+  -webkit-transform: scale(1) rotate(190.8deg);
+  transform: scale(1) rotate(190.8deg); }
+
+progress[value="107"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(192.6deg);
+  -o-transform: scale(1) rotate(192.6deg);
+  -ms-transform: scale(1) rotate(192.6deg);
+  -webkit-transform: scale(1) rotate(192.6deg);
+  transform: scale(1) rotate(192.6deg); }
+
+progress[value="108"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(194.4deg);
+  -o-transform: scale(1) rotate(194.4deg);
+  -ms-transform: scale(1) rotate(194.4deg);
+  -webkit-transform: scale(1) rotate(194.4deg);
+  transform: scale(1) rotate(194.4deg); }
+
+progress[value="109"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(196.2deg);
+  -o-transform: scale(1) rotate(196.2deg);
+  -ms-transform: scale(1) rotate(196.2deg);
+  -webkit-transform: scale(1) rotate(196.2deg);
+  transform: scale(1) rotate(196.2deg); }
+
+progress[value="110"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(198deg);
+  -o-transform: scale(1) rotate(198deg);
+  -ms-transform: scale(1) rotate(198deg);
+  -webkit-transform: scale(1) rotate(198deg);
+  transform: scale(1) rotate(198deg); }
+
+progress[value="111"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(199.8deg);
+  -o-transform: scale(1) rotate(199.8deg);
+  -ms-transform: scale(1) rotate(199.8deg);
+  -webkit-transform: scale(1) rotate(199.8deg);
+  transform: scale(1) rotate(199.8deg); }
+
+progress[value="112"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(201.6deg);
+  -o-transform: scale(1) rotate(201.6deg);
+  -ms-transform: scale(1) rotate(201.6deg);
+  -webkit-transform: scale(1) rotate(201.6deg);
+  transform: scale(1) rotate(201.6deg); }
+
+progress[value="113"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(203.4deg);
+  -o-transform: scale(1) rotate(203.4deg);
+  -ms-transform: scale(1) rotate(203.4deg);
+  -webkit-transform: scale(1) rotate(203.4deg);
+  transform: scale(1) rotate(203.4deg); }
+
+progress[value="114"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(205.2deg);
+  -o-transform: scale(1) rotate(205.2deg);
+  -ms-transform: scale(1) rotate(205.2deg);
+  -webkit-transform: scale(1) rotate(205.2deg);
+  transform: scale(1) rotate(205.2deg); }
+
+progress[value="115"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(207deg);
+  -o-transform: scale(1) rotate(207deg);
+  -ms-transform: scale(1) rotate(207deg);
+  -webkit-transform: scale(1) rotate(207deg);
+  transform: scale(1) rotate(207deg); }
+
+progress[value="116"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(208.8deg);
+  -o-transform: scale(1) rotate(208.8deg);
+  -ms-transform: scale(1) rotate(208.8deg);
+  -webkit-transform: scale(1) rotate(208.8deg);
+  transform: scale(1) rotate(208.8deg); }
+
+progress[value="117"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(210.6deg);
+  -o-transform: scale(1) rotate(210.6deg);
+  -ms-transform: scale(1) rotate(210.6deg);
+  -webkit-transform: scale(1) rotate(210.6deg);
+  transform: scale(1) rotate(210.6deg); }
+
+progress[value="118"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(212.4deg);
+  -o-transform: scale(1) rotate(212.4deg);
+  -ms-transform: scale(1) rotate(212.4deg);
+  -webkit-transform: scale(1) rotate(212.4deg);
+  transform: scale(1) rotate(212.4deg); }
+
+progress[value="119"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(214.2deg);
+  -o-transform: scale(1) rotate(214.2deg);
+  -ms-transform: scale(1) rotate(214.2deg);
+  -webkit-transform: scale(1) rotate(214.2deg);
+  transform: scale(1) rotate(214.2deg); }
+
+progress[value="120"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(216deg);
+  -o-transform: scale(1) rotate(216deg);
+  -ms-transform: scale(1) rotate(216deg);
+  -webkit-transform: scale(1) rotate(216deg);
+  transform: scale(1) rotate(216deg); }
+
+progress[value="121"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(217.8deg);
+  -o-transform: scale(1) rotate(217.8deg);
+  -ms-transform: scale(1) rotate(217.8deg);
+  -webkit-transform: scale(1) rotate(217.8deg);
+  transform: scale(1) rotate(217.8deg); }
+
+progress[value="122"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(219.6deg);
+  -o-transform: scale(1) rotate(219.6deg);
+  -ms-transform: scale(1) rotate(219.6deg);
+  -webkit-transform: scale(1) rotate(219.6deg);
+  transform: scale(1) rotate(219.6deg); }
+
+progress[value="123"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(221.4deg);
+  -o-transform: scale(1) rotate(221.4deg);
+  -ms-transform: scale(1) rotate(221.4deg);
+  -webkit-transform: scale(1) rotate(221.4deg);
+  transform: scale(1) rotate(221.4deg); }
+
+progress[value="124"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(223.2deg);
+  -o-transform: scale(1) rotate(223.2deg);
+  -ms-transform: scale(1) rotate(223.2deg);
+  -webkit-transform: scale(1) rotate(223.2deg);
+  transform: scale(1) rotate(223.2deg); }
+
+progress[value="125"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(225deg);
+  -o-transform: scale(1) rotate(225deg);
+  -ms-transform: scale(1) rotate(225deg);
+  -webkit-transform: scale(1) rotate(225deg);
+  transform: scale(1) rotate(225deg); }
+
+progress[value="126"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(226.8deg);
+  -o-transform: scale(1) rotate(226.8deg);
+  -ms-transform: scale(1) rotate(226.8deg);
+  -webkit-transform: scale(1) rotate(226.8deg);
+  transform: scale(1) rotate(226.8deg); }
+
+progress[value="127"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(228.6deg);
+  -o-transform: scale(1) rotate(228.6deg);
+  -ms-transform: scale(1) rotate(228.6deg);
+  -webkit-transform: scale(1) rotate(228.6deg);
+  transform: scale(1) rotate(228.6deg); }
+
+progress[value="128"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(230.4deg);
+  -o-transform: scale(1) rotate(230.4deg);
+  -ms-transform: scale(1) rotate(230.4deg);
+  -webkit-transform: scale(1) rotate(230.4deg);
+  transform: scale(1) rotate(230.4deg); }
+
+progress[value="129"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(232.2deg);
+  -o-transform: scale(1) rotate(232.2deg);
+  -ms-transform: scale(1) rotate(232.2deg);
+  -webkit-transform: scale(1) rotate(232.2deg);
+  transform: scale(1) rotate(232.2deg); }
+
+progress[value="130"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(234deg);
+  -o-transform: scale(1) rotate(234deg);
+  -ms-transform: scale(1) rotate(234deg);
+  -webkit-transform: scale(1) rotate(234deg);
+  transform: scale(1) rotate(234deg); }
+
+progress[value="131"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(235.8deg);
+  -o-transform: scale(1) rotate(235.8deg);
+  -ms-transform: scale(1) rotate(235.8deg);
+  -webkit-transform: scale(1) rotate(235.8deg);
+  transform: scale(1) rotate(235.8deg); }
+
+progress[value="132"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(237.6deg);
+  -o-transform: scale(1) rotate(237.6deg);
+  -ms-transform: scale(1) rotate(237.6deg);
+  -webkit-transform: scale(1) rotate(237.6deg);
+  transform: scale(1) rotate(237.6deg); }
+
+progress[value="133"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(239.4deg);
+  -o-transform: scale(1) rotate(239.4deg);
+  -ms-transform: scale(1) rotate(239.4deg);
+  -webkit-transform: scale(1) rotate(239.4deg);
+  transform: scale(1) rotate(239.4deg); }
+
+progress[value="134"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(241.2deg);
+  -o-transform: scale(1) rotate(241.2deg);
+  -ms-transform: scale(1) rotate(241.2deg);
+  -webkit-transform: scale(1) rotate(241.2deg);
+  transform: scale(1) rotate(241.2deg); }
+
+progress[value="135"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(243deg);
+  -o-transform: scale(1) rotate(243deg);
+  -ms-transform: scale(1) rotate(243deg);
+  -webkit-transform: scale(1) rotate(243deg);
+  transform: scale(1) rotate(243deg); }
+
+progress[value="136"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(244.8deg);
+  -o-transform: scale(1) rotate(244.8deg);
+  -ms-transform: scale(1) rotate(244.8deg);
+  -webkit-transform: scale(1) rotate(244.8deg);
+  transform: scale(1) rotate(244.8deg); }
+
+progress[value="137"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(246.6deg);
+  -o-transform: scale(1) rotate(246.6deg);
+  -ms-transform: scale(1) rotate(246.6deg);
+  -webkit-transform: scale(1) rotate(246.6deg);
+  transform: scale(1) rotate(246.6deg); }
+
+progress[value="138"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(248.4deg);
+  -o-transform: scale(1) rotate(248.4deg);
+  -ms-transform: scale(1) rotate(248.4deg);
+  -webkit-transform: scale(1) rotate(248.4deg);
+  transform: scale(1) rotate(248.4deg); }
+
+progress[value="139"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(250.2deg);
+  -o-transform: scale(1) rotate(250.2deg);
+  -ms-transform: scale(1) rotate(250.2deg);
+  -webkit-transform: scale(1) rotate(250.2deg);
+  transform: scale(1) rotate(250.2deg); }
+
+progress[value="140"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(252deg);
+  -o-transform: scale(1) rotate(252deg);
+  -ms-transform: scale(1) rotate(252deg);
+  -webkit-transform: scale(1) rotate(252deg);
+  transform: scale(1) rotate(252deg); }
+
+progress[value="141"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(253.8deg);
+  -o-transform: scale(1) rotate(253.8deg);
+  -ms-transform: scale(1) rotate(253.8deg);
+  -webkit-transform: scale(1) rotate(253.8deg);
+  transform: scale(1) rotate(253.8deg); }
+
+progress[value="142"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(255.6deg);
+  -o-transform: scale(1) rotate(255.6deg);
+  -ms-transform: scale(1) rotate(255.6deg);
+  -webkit-transform: scale(1) rotate(255.6deg);
+  transform: scale(1) rotate(255.6deg); }
+
+progress[value="143"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(257.4deg);
+  -o-transform: scale(1) rotate(257.4deg);
+  -ms-transform: scale(1) rotate(257.4deg);
+  -webkit-transform: scale(1) rotate(257.4deg);
+  transform: scale(1) rotate(257.4deg); }
+
+progress[value="144"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(259.2deg);
+  -o-transform: scale(1) rotate(259.2deg);
+  -ms-transform: scale(1) rotate(259.2deg);
+  -webkit-transform: scale(1) rotate(259.2deg);
+  transform: scale(1) rotate(259.2deg); }
+
+progress[value="145"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(261deg);
+  -o-transform: scale(1) rotate(261deg);
+  -ms-transform: scale(1) rotate(261deg);
+  -webkit-transform: scale(1) rotate(261deg);
+  transform: scale(1) rotate(261deg); }
+
+progress[value="146"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(262.8deg);
+  -o-transform: scale(1) rotate(262.8deg);
+  -ms-transform: scale(1) rotate(262.8deg);
+  -webkit-transform: scale(1) rotate(262.8deg);
+  transform: scale(1) rotate(262.8deg); }
+
+progress[value="147"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(264.6deg);
+  -o-transform: scale(1) rotate(264.6deg);
+  -ms-transform: scale(1) rotate(264.6deg);
+  -webkit-transform: scale(1) rotate(264.6deg);
+  transform: scale(1) rotate(264.6deg); }
+
+progress[value="148"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(266.4deg);
+  -o-transform: scale(1) rotate(266.4deg);
+  -ms-transform: scale(1) rotate(266.4deg);
+  -webkit-transform: scale(1) rotate(266.4deg);
+  transform: scale(1) rotate(266.4deg); }
+
+progress[value="149"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(268.2deg);
+  -o-transform: scale(1) rotate(268.2deg);
+  -ms-transform: scale(1) rotate(268.2deg);
+  -webkit-transform: scale(1) rotate(268.2deg);
+  transform: scale(1) rotate(268.2deg); }
+
+progress[value="150"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(270deg);
+  -o-transform: scale(1) rotate(270deg);
+  -ms-transform: scale(1) rotate(270deg);
+  -webkit-transform: scale(1) rotate(270deg);
+  transform: scale(1) rotate(270deg); }
+
+progress[value="151"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(271.8deg);
+  -o-transform: scale(1) rotate(271.8deg);
+  -ms-transform: scale(1) rotate(271.8deg);
+  -webkit-transform: scale(1) rotate(271.8deg);
+  transform: scale(1) rotate(271.8deg); }
+
+progress[value="152"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(273.6deg);
+  -o-transform: scale(1) rotate(273.6deg);
+  -ms-transform: scale(1) rotate(273.6deg);
+  -webkit-transform: scale(1) rotate(273.6deg);
+  transform: scale(1) rotate(273.6deg); }
+
+progress[value="153"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(275.4deg);
+  -o-transform: scale(1) rotate(275.4deg);
+  -ms-transform: scale(1) rotate(275.4deg);
+  -webkit-transform: scale(1) rotate(275.4deg);
+  transform: scale(1) rotate(275.4deg); }
+
+progress[value="154"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(277.2deg);
+  -o-transform: scale(1) rotate(277.2deg);
+  -ms-transform: scale(1) rotate(277.2deg);
+  -webkit-transform: scale(1) rotate(277.2deg);
+  transform: scale(1) rotate(277.2deg); }
+
+progress[value="155"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(279deg);
+  -o-transform: scale(1) rotate(279deg);
+  -ms-transform: scale(1) rotate(279deg);
+  -webkit-transform: scale(1) rotate(279deg);
+  transform: scale(1) rotate(279deg); }
+
+progress[value="156"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(280.8deg);
+  -o-transform: scale(1) rotate(280.8deg);
+  -ms-transform: scale(1) rotate(280.8deg);
+  -webkit-transform: scale(1) rotate(280.8deg);
+  transform: scale(1) rotate(280.8deg); }
+
+progress[value="157"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(282.6deg);
+  -o-transform: scale(1) rotate(282.6deg);
+  -ms-transform: scale(1) rotate(282.6deg);
+  -webkit-transform: scale(1) rotate(282.6deg);
+  transform: scale(1) rotate(282.6deg); }
+
+progress[value="158"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(284.4deg);
+  -o-transform: scale(1) rotate(284.4deg);
+  -ms-transform: scale(1) rotate(284.4deg);
+  -webkit-transform: scale(1) rotate(284.4deg);
+  transform: scale(1) rotate(284.4deg); }
+
+progress[value="159"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(286.2deg);
+  -o-transform: scale(1) rotate(286.2deg);
+  -ms-transform: scale(1) rotate(286.2deg);
+  -webkit-transform: scale(1) rotate(286.2deg);
+  transform: scale(1) rotate(286.2deg); }
+
+progress[value="160"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(288deg);
+  -o-transform: scale(1) rotate(288deg);
+  -ms-transform: scale(1) rotate(288deg);
+  -webkit-transform: scale(1) rotate(288deg);
+  transform: scale(1) rotate(288deg); }
+
+progress[value="161"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(289.8deg);
+  -o-transform: scale(1) rotate(289.8deg);
+  -ms-transform: scale(1) rotate(289.8deg);
+  -webkit-transform: scale(1) rotate(289.8deg);
+  transform: scale(1) rotate(289.8deg); }
+
+progress[value="162"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(291.6deg);
+  -o-transform: scale(1) rotate(291.6deg);
+  -ms-transform: scale(1) rotate(291.6deg);
+  -webkit-transform: scale(1) rotate(291.6deg);
+  transform: scale(1) rotate(291.6deg); }
+
+progress[value="163"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(293.4deg);
+  -o-transform: scale(1) rotate(293.4deg);
+  -ms-transform: scale(1) rotate(293.4deg);
+  -webkit-transform: scale(1) rotate(293.4deg);
+  transform: scale(1) rotate(293.4deg); }
+
+progress[value="164"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(295.2deg);
+  -o-transform: scale(1) rotate(295.2deg);
+  -ms-transform: scale(1) rotate(295.2deg);
+  -webkit-transform: scale(1) rotate(295.2deg);
+  transform: scale(1) rotate(295.2deg); }
+
+progress[value="165"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(297deg);
+  -o-transform: scale(1) rotate(297deg);
+  -ms-transform: scale(1) rotate(297deg);
+  -webkit-transform: scale(1) rotate(297deg);
+  transform: scale(1) rotate(297deg); }
+
+progress[value="166"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(298.8deg);
+  -o-transform: scale(1) rotate(298.8deg);
+  -ms-transform: scale(1) rotate(298.8deg);
+  -webkit-transform: scale(1) rotate(298.8deg);
+  transform: scale(1) rotate(298.8deg); }
+
+progress[value="167"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(300.6deg);
+  -o-transform: scale(1) rotate(300.6deg);
+  -ms-transform: scale(1) rotate(300.6deg);
+  -webkit-transform: scale(1) rotate(300.6deg);
+  transform: scale(1) rotate(300.6deg); }
+
+progress[value="168"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(302.4deg);
+  -o-transform: scale(1) rotate(302.4deg);
+  -ms-transform: scale(1) rotate(302.4deg);
+  -webkit-transform: scale(1) rotate(302.4deg);
+  transform: scale(1) rotate(302.4deg); }
+
+progress[value="169"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(304.2deg);
+  -o-transform: scale(1) rotate(304.2deg);
+  -ms-transform: scale(1) rotate(304.2deg);
+  -webkit-transform: scale(1) rotate(304.2deg);
+  transform: scale(1) rotate(304.2deg); }
+
+progress[value="170"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(306deg);
+  -o-transform: scale(1) rotate(306deg);
+  -ms-transform: scale(1) rotate(306deg);
+  -webkit-transform: scale(1) rotate(306deg);
+  transform: scale(1) rotate(306deg); }
+
+progress[value="171"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(307.8deg);
+  -o-transform: scale(1) rotate(307.8deg);
+  -ms-transform: scale(1) rotate(307.8deg);
+  -webkit-transform: scale(1) rotate(307.8deg);
+  transform: scale(1) rotate(307.8deg); }
+
+progress[value="172"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(309.6deg);
+  -o-transform: scale(1) rotate(309.6deg);
+  -ms-transform: scale(1) rotate(309.6deg);
+  -webkit-transform: scale(1) rotate(309.6deg);
+  transform: scale(1) rotate(309.6deg); }
+
+progress[value="173"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(311.4deg);
+  -o-transform: scale(1) rotate(311.4deg);
+  -ms-transform: scale(1) rotate(311.4deg);
+  -webkit-transform: scale(1) rotate(311.4deg);
+  transform: scale(1) rotate(311.4deg); }
+
+progress[value="174"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(313.2deg);
+  -o-transform: scale(1) rotate(313.2deg);
+  -ms-transform: scale(1) rotate(313.2deg);
+  -webkit-transform: scale(1) rotate(313.2deg);
+  transform: scale(1) rotate(313.2deg); }
+
+progress[value="175"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(315deg);
+  -o-transform: scale(1) rotate(315deg);
+  -ms-transform: scale(1) rotate(315deg);
+  -webkit-transform: scale(1) rotate(315deg);
+  transform: scale(1) rotate(315deg); }
+
+progress[value="176"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(316.8deg);
+  -o-transform: scale(1) rotate(316.8deg);
+  -ms-transform: scale(1) rotate(316.8deg);
+  -webkit-transform: scale(1) rotate(316.8deg);
+  transform: scale(1) rotate(316.8deg); }
+
+progress[value="177"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(318.6deg);
+  -o-transform: scale(1) rotate(318.6deg);
+  -ms-transform: scale(1) rotate(318.6deg);
+  -webkit-transform: scale(1) rotate(318.6deg);
+  transform: scale(1) rotate(318.6deg); }
+
+progress[value="178"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(320.4deg);
+  -o-transform: scale(1) rotate(320.4deg);
+  -ms-transform: scale(1) rotate(320.4deg);
+  -webkit-transform: scale(1) rotate(320.4deg);
+  transform: scale(1) rotate(320.4deg); }
+
+progress[value="179"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(322.2deg);
+  -o-transform: scale(1) rotate(322.2deg);
+  -ms-transform: scale(1) rotate(322.2deg);
+  -webkit-transform: scale(1) rotate(322.2deg);
+  transform: scale(1) rotate(322.2deg); }
+
+progress[value="180"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(324deg);
+  -o-transform: scale(1) rotate(324deg);
+  -ms-transform: scale(1) rotate(324deg);
+  -webkit-transform: scale(1) rotate(324deg);
+  transform: scale(1) rotate(324deg); }
+
+progress[value="181"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(325.8deg);
+  -o-transform: scale(1) rotate(325.8deg);
+  -ms-transform: scale(1) rotate(325.8deg);
+  -webkit-transform: scale(1) rotate(325.8deg);
+  transform: scale(1) rotate(325.8deg); }
+
+progress[value="182"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(327.6deg);
+  -o-transform: scale(1) rotate(327.6deg);
+  -ms-transform: scale(1) rotate(327.6deg);
+  -webkit-transform: scale(1) rotate(327.6deg);
+  transform: scale(1) rotate(327.6deg); }
+
+progress[value="183"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(329.4deg);
+  -o-transform: scale(1) rotate(329.4deg);
+  -ms-transform: scale(1) rotate(329.4deg);
+  -webkit-transform: scale(1) rotate(329.4deg);
+  transform: scale(1) rotate(329.4deg); }
+
+progress[value="184"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(331.2deg);
+  -o-transform: scale(1) rotate(331.2deg);
+  -ms-transform: scale(1) rotate(331.2deg);
+  -webkit-transform: scale(1) rotate(331.2deg);
+  transform: scale(1) rotate(331.2deg); }
+
+progress[value="185"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(333deg);
+  -o-transform: scale(1) rotate(333deg);
+  -ms-transform: scale(1) rotate(333deg);
+  -webkit-transform: scale(1) rotate(333deg);
+  transform: scale(1) rotate(333deg); }
+
+progress[value="186"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(334.8deg);
+  -o-transform: scale(1) rotate(334.8deg);
+  -ms-transform: scale(1) rotate(334.8deg);
+  -webkit-transform: scale(1) rotate(334.8deg);
+  transform: scale(1) rotate(334.8deg); }
+
+progress[value="187"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(336.6deg);
+  -o-transform: scale(1) rotate(336.6deg);
+  -ms-transform: scale(1) rotate(336.6deg);
+  -webkit-transform: scale(1) rotate(336.6deg);
+  transform: scale(1) rotate(336.6deg); }
+
+progress[value="188"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(338.4deg);
+  -o-transform: scale(1) rotate(338.4deg);
+  -ms-transform: scale(1) rotate(338.4deg);
+  -webkit-transform: scale(1) rotate(338.4deg);
+  transform: scale(1) rotate(338.4deg); }
+
+progress[value="189"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(340.2deg);
+  -o-transform: scale(1) rotate(340.2deg);
+  -ms-transform: scale(1) rotate(340.2deg);
+  -webkit-transform: scale(1) rotate(340.2deg);
+  transform: scale(1) rotate(340.2deg); }
+
+progress[value="190"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(342deg);
+  -o-transform: scale(1) rotate(342deg);
+  -ms-transform: scale(1) rotate(342deg);
+  -webkit-transform: scale(1) rotate(342deg);
+  transform: scale(1) rotate(342deg); }
+
+progress[value="191"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(343.8deg);
+  -o-transform: scale(1) rotate(343.8deg);
+  -ms-transform: scale(1) rotate(343.8deg);
+  -webkit-transform: scale(1) rotate(343.8deg);
+  transform: scale(1) rotate(343.8deg); }
+
+progress[value="192"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(345.6deg);
+  -o-transform: scale(1) rotate(345.6deg);
+  -ms-transform: scale(1) rotate(345.6deg);
+  -webkit-transform: scale(1) rotate(345.6deg);
+  transform: scale(1) rotate(345.6deg); }
+
+progress[value="193"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(347.4deg);
+  -o-transform: scale(1) rotate(347.4deg);
+  -ms-transform: scale(1) rotate(347.4deg);
+  -webkit-transform: scale(1) rotate(347.4deg);
+  transform: scale(1) rotate(347.4deg); }
+
+progress[value="194"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(349.2deg);
+  -o-transform: scale(1) rotate(349.2deg);
+  -ms-transform: scale(1) rotate(349.2deg);
+  -webkit-transform: scale(1) rotate(349.2deg);
+  transform: scale(1) rotate(349.2deg); }
+
+progress[value="195"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(351deg);
+  -o-transform: scale(1) rotate(351deg);
+  -ms-transform: scale(1) rotate(351deg);
+  -webkit-transform: scale(1) rotate(351deg);
+  transform: scale(1) rotate(351deg); }
+
+progress[value="196"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(352.8deg);
+  -o-transform: scale(1) rotate(352.8deg);
+  -ms-transform: scale(1) rotate(352.8deg);
+  -webkit-transform: scale(1) rotate(352.8deg);
+  transform: scale(1) rotate(352.8deg); }
+
+progress[value="197"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(354.6deg);
+  -o-transform: scale(1) rotate(354.6deg);
+  -ms-transform: scale(1) rotate(354.6deg);
+  -webkit-transform: scale(1) rotate(354.6deg);
+  transform: scale(1) rotate(354.6deg); }
+
+progress[value="198"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(356.4deg);
+  -o-transform: scale(1) rotate(356.4deg);
+  -ms-transform: scale(1) rotate(356.4deg);
+  -webkit-transform: scale(1) rotate(356.4deg);
+  transform: scale(1) rotate(356.4deg); }
+
+progress[value="199"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(358.2deg);
+  -o-transform: scale(1) rotate(358.2deg);
+  -ms-transform: scale(1) rotate(358.2deg);
+  -webkit-transform: scale(1) rotate(358.2deg);
+  transform: scale(1) rotate(358.2deg); }
+
+progress[value="200"]::-webkit-progress-value:before {
+  -moz-transform: scale(1) rotate(360deg);
+  -o-transform: scale(1) rotate(360deg);
+  -ms-transform: scale(1) rotate(360deg);
+  -webkit-transform: scale(1) rotate(360deg);
+  transform: scale(1) rotate(360deg); }
+
+.mask {
+  top: 1px;
+  left: 1px;
+  position: absolute;
+  z-index: 800;
+  width: 50%;
+  height: calc(100% - 2px);
+  border-radius: 50px 0 0 50px;
+  background: white; }
+
+.mask-2 {
+  width: 24px;
+  height: 48px;
+  top: 1px;
+  right: 1px;
+  left: inherit;
+  z-index: -1;
+  background: #333333;
+  border-radius: 0 50px 50px 0; }
+
+.trigger-audio {
+  left: 0;
+  position: absolute;
+  z-index: 900;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background: transparent;
+  border-radius: 100%; }
+  .trigger-audio .trigger-inner {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    margin: auto;
+    background: white;
+    border-radius: 100%; }
+  .trigger-audio.play i, .trigger-audio.pause i {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute; }
+  .trigger-audio.play i {
+    left: 4px;
+    width: 0;
+    height: 0;
+    margin: auto;
+    border-top: 8px solid transparent;
+    border-left: 15px solid #333333;
+    border-bottom: 8px solid transparent; }
+  .trigger-audio.pause i {
+    width: 16px;
+    height: 20px;
+    background: transparent;
+    border-left: 5px solid #333333;
+    border-right: 5px solid #333333; }
+
+.progress-container:hover progress::-webkit-progress-bar,
+.progress-container.is_active progress::-webkit-progress-bar {
+  border-color: #dd2663; }
+.progress-container:hover progress::-webkit-progress-value:before,
+.progress-container.is_active progress::-webkit-progress-value:before {
+  background-color: #dd2663; }
+.progress-container:hover .mask-2,
+.progress-container.is_active .mask-2 {
+  background: #dd2663 !important; }
+.progress-container:hover .trigger-audio.play i,
+.progress-container.is_active .trigger-audio.play i {
+  border-left: 15px solid #dd2663; }
+.progress-container:hover .trigger-audio.pause i,
+.progress-container.is_active .trigger-audio.pause i {
+  border-color: #dd2663; }
 
 /*
  * Show and Hide class functions
@@ -1995,6 +3344,16 @@ section.has-extra-pad-bottom,
 .section-body.has-extra-pad-bottom,
 .section-footer.has-extra-pad-bottom {
   padding-bottom: 7.5rem; }
+section.has-bg,
+.section-header.has-bg,
+.section-body.has-bg,
+.section-footer.has-bg {
+  background-color: #e8e7e6; }
+section.half,
+.section-header.half,
+.section-body.half,
+.section-footer.half {
+  min-height: 50vh; }
 
 section.image .section-body.is-pos-left {
   text-align: left; }
@@ -2022,7 +3381,7 @@ h1.is-aligned-left, h2.is-aligned-left, p.is-aligned-left, a.is-aligned-left {
 h1.is-aligned-right, h2.is-aligned-right, p.is-aligned-right, a.is-aligned-right {
   text-align: right; }
 h1.is-black, h2.is-black, p.is-black, a.is-black {
-  color: black; }
+  color: #333333; }
 h1.is-white, h2.is-white, p.is-white, a.is-white {
   color: white; }
 
