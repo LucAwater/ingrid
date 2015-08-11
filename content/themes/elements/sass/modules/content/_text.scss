@@ -5,8 +5,9 @@ section.text{
     max-width: 500px;
     margin: auto;
 
-    h2,
-    p{
+    > h2,
+    > p,
+    > ul{
       margin-bottom: 1em;
     }
 

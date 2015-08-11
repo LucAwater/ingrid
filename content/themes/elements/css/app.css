@@ -1566,8 +1566,9 @@ section.text {
   section.text .section-body {
     max-width: 500px;
     margin: auto; }
-    section.text .section-body h2,
-    section.text .section-body p {
+    section.text .section-body > h2,
+    section.text .section-body > p,
+    section.text .section-body > ul {
       margin-bottom: 1em; }
     section.text .section-body p span {
       text-decoration: none !important;
