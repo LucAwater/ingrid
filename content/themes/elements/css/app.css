@@ -1619,7 +1619,8 @@ section.grid ul li {
   top: 0;
   bottom: 0;
   margin: auto;
-  overflow: hidden; }
+  overflow: hidden;
+  cursor: pointer; }
 
 progress {
   -webkit-appearance: none;
