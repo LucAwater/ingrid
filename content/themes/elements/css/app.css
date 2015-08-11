@@ -1318,7 +1318,7 @@ ul {
 .margin-b100 {
   margin-bottom: 6.25rem !important; }
 
-h1, h2, p, a {
+h1, h2, p, a, nav a {
   font-family: "proxima-nova", sans-serif;
   font-weight: normal;
   font-size: 16px;
@@ -1332,19 +1332,26 @@ h1, h2 {
 h2 {
   font-size: 2em; }
 
-p {
+p, a {
   line-height: 1.4; }
 
 a {
+  color: #333333;
+  text-decoration: none;
+  border-bottom: thin dotted #333333; }
+  a:hover, a:active {
+    color: #dd2663; }
+
+nav a {
   color: #333333;
   font-weight: 300;
   letter-spacing: 1.2px;
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer; }
-  a:hover, a:focus {
+  nav a:hover, nav a:focus {
     color: #dd2663; }
-  a.link-h1, a.link-h2, a.link-h3, a.link-p {
+  nav a.link-h1, nav a.link-h2, nav a.link-h3, nav a.link-p {
     text-decoration: none; }
 
 html,
@@ -1425,7 +1432,7 @@ footer {
   footer > img {
     max-width: 250px;
     margin-bottom: 50px; }
-  footer p {
+  footer p, footer a {
     margin-bottom: 1em; }
   footer ul li {
     width: 35px;
@@ -1568,9 +1575,10 @@ section.text {
     margin: auto; }
     section.text .section-body > h2,
     section.text .section-body > p,
+    section.text .section-body > a,
     section.text .section-body > ul {
       margin-bottom: 1em; }
-    section.text .section-body p span {
+    section.text .section-body p span, section.text .section-body a span {
       text-decoration: none !important;
       border-bottom: thin dotted #333333; }
     section.text .section-body .button {
@@ -1580,7 +1588,7 @@ section.playlist ul li {
   height: 100px;
   padding: 0 25px;
   border-bottom: thin solid #e8e7e6; }
-  section.playlist ul li p {
+  section.playlist ul li p, section.playlist ul li a {
     line-height: 100px; }
 
 @media only screen and (max-width: 31.25em) {
@@ -3410,7 +3418,7 @@ h1.is-black, h2.is-black, p.is-black, a.is-black {
 h1.is-white, h2.is-white, p.is-white, a.is-white {
   color: white; }
 
-p.is-small {
+p.is-small, a.is-small {
   font-size: 15px; }
 
 .is-stretched-wrapper {
