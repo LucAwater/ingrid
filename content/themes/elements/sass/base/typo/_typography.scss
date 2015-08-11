@@ -39,7 +39,8 @@ p a{
   border-bottom: thin dotted $black;
 }
 
-nav a{
+nav a,
+.button{
   @extend %base;
 
   color: $black;
