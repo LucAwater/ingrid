@@ -1,24 +1,26 @@
-ul li{
-  height: 0;
+section.grid{
+  ul li{
+    height: 0;
 
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 
-  &.r30{
-    padding-bottom: 30%;
-  }
+    &.r30{
+      padding-bottom: 30%;
+    }
 
-  &.r50{
-    padding-bottom: 50%;
-  }
+    &.r50{
+      padding-bottom: 50%;
+    }
 
-  &.r70{
-    padding-bottom: 70%;
-  }
+    &.r70{
+      padding-bottom: 70%;
+    }
 
-  &.text{
-    height: 500px;
-    background: $grey-light;
+    &.text{
+      height: 500px;
+      background: $grey-light;
+    }
   }
 }

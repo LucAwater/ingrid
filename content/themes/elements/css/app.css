@@ -1585,18 +1585,18 @@ section.playlist ul li {
 @media only screen and (max-width: 31.25em) {
   section.playlist {
     padding: 0; } }
-ul li {
+section.grid ul li {
   height: 0;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }
-  ul li.r30 {
+  section.grid ul li.r30 {
     padding-bottom: 30%; }
-  ul li.r50 {
+  section.grid ul li.r50 {
     padding-bottom: 50%; }
-  ul li.r70 {
+  section.grid ul li.r70 {
     padding-bottom: 70%; }
-  ul li.text {
+  section.grid ul li.text {
     height: 500px;
     background: #e8e7e6; }
 
