@@ -1459,7 +1459,8 @@ aside .aside-images {
     background-position: center center; }
 
 body.page-actrice main {
-  width: 100%; }
+  width: 100%;
+  padding: 200px 0; }
 body.page-actrice ul li img {
   min-width: 100%; }
 body.page-actrice .width-10 {
