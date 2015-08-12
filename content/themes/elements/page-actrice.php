@@ -18,13 +18,25 @@ get_header();
   ?>
 
   <ul>
-    <li class="s-1 r30 columns" style="background-image:url('<?php echo $image1['sizes']['large']; ?>');"></li>
-    <li class="s-1 text columns"></li>
-    <li class="s-1 r50 columns" style="background-image:url('<?php echo $image2['sizes']['large']; ?>');"></li>
-    <li class="s-1 r50 columns" style="background-image:url('<?php echo $image3['sizes']['large']; ?>');"></li>
+    <li class="width-40 left-20">
+      <img src="<?php echo $image1['sizes']['large']; ?>" width="<?php echo $image1['width']; ?>" height="<?php echo $image1['height']; ?>">
+    </li>
 
-    <li class="s-1 r70 columns" style="background-image:url('<?php echo $image4['sizes']['large']; ?>');"></li>
-    <li class="s-2 r50 columns" style="background-image:url('<?php echo $image5['sizes']['large']; ?>');"></li>
+    <li class="width-30 left-50 top-30">
+      <img src="<?php echo $image2['sizes']['large']; ?>" width="<?php echo $image2['width']; ?>" height="<?php echo $image2['height']; ?>">
+    </li>
+
+    <li class="width-80 left-10">
+      <img src="<?php echo $image3['sizes']['large']; ?>" width="<?php echo $image3['width']; ?>" height="<?php echo $image3['height']; ?>">
+    </li>
+
+    <li class="width-40 left-60">
+      <img src="<?php echo $image4['sizes']['large']; ?>" width="<?php echo $image4['width']; ?>" height="<?php echo $image4['height']; ?>">
+    </li>
+
+    <li class="width-60 left-20 top-20">
+      <img src="<?php echo $image5['sizes']['large']; ?>" width="<?php echo $image5['width']; ?>" height="<?php echo $image5['height']; ?>">
+    </li>
   </ul>
 
 <?php
