@@ -12,7 +12,7 @@ $height = get_sub_field( 'text_o_height' );
 echo
 '<section class="text has-anchor' . ( ($background) ? ' has-bg' : "") . '' . ( ($height === 'half') ? ' half' : "") . '" id="anchor-' . $i_anchor . '">
   <div class="section-body">
-    ' . ( ($title) ? '<h2 class="s-4 columns is-uppercase is-bold is-aligned-center">' . $title . '</h2>' : "") . '
+    ' . ( ($title) ? '<h2 class="is-uppercase">' . $title . '</h2>' : "") . '
     ' . $content . '
     ' . ( ($button) ? '<a class="button" href="' . $button_link . '">' . $button_text . '</a>' : "" ) . '
   </div>

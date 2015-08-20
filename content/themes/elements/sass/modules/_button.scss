@@ -1,18 +1,19 @@
 .button{
+  @include transition( .3s );
+  
   height: 40px;
   padding: 0 30px;
   display: inline-block;
 
-  background-color: $pink;
-  border-radius: 22px;
+  border: thin solid $pink;
+  border-radius: 3px;
 
-  color: $white;
+  color: $pink;
   line-height: 40px;
   text-decoration: none;
 
   &:hover,
   &:focus{
-    color: $white;
-    background-color: $pink-dark;
+    background-color: $pink-transparent;
   }
 }

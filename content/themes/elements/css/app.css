@@ -1318,7 +1318,7 @@ ul {
 .margin-b100 {
   margin-bottom: 6.25rem !important; }
 
-h1, h2, p, a, nav a,
+h1, h2, p, ul li, a, nav a,
 .button {
   font-family: "proxima-nova", sans-serif;
   font-weight: normal;
@@ -1331,18 +1331,21 @@ h1, h2 {
   font-size: 3em; }
 
 h2 {
-  font-size: 2em; }
+  color: #aaaaaa;
+  font-size: 20px;
+  font-weight: 100;
+  letter-spacing: 3px; }
 
-p, a {
+p, ul li, a {
   line-height: 1.4; }
 
 a {
   color: #333333;
   text-decoration: none; }
   a:hover, a:active {
-    color: #dd2663; }
+    color: #ff7573; }
 
-p a, a a {
+p a, ul li a, a a {
   border-bottom: thin dotted #333333; }
 
 nav a,
@@ -1356,7 +1359,7 @@ nav a,
   nav a:hover, nav a:focus,
   .button:hover,
   .button:focus {
-    color: #dd2663; }
+    color: #ff7573; }
   nav a.link-h1, nav a.link-h2, nav a.link-h3, nav a.link-p,
   .button.link-h1,
   .button.link-h2,
@@ -1442,7 +1445,7 @@ footer {
   footer > img {
     max-width: 250px;
     margin-bottom: 50px; }
-  footer p, footer a {
+  footer p, footer ul li, ul footer li, footer a {
     margin-bottom: 1em; }
   footer ul li {
     width: 35px;
@@ -1485,7 +1488,7 @@ body.page-actrice ul li img {
 body.page-actrice ul li.text {
   padding: 50px 50px 200px;
   background-color: white; }
-  body.page-actrice ul li.text p, body.page-actrice ul li.text a {
+  body.page-actrice ul li.text p, body.page-actrice ul li.text li, body.page-actrice ul li.text a {
     margin-bottom: 1em; }
 body.page-actrice .width-10 {
   width: 10%; }
@@ -1652,7 +1655,7 @@ nav {
         color: white; }
 
 nav ul li.current {
-  color: #dd2663; }
+  color: #ff7573; }
 
 @media only screen and (max-width: 62.5em) {
   nav {
@@ -1661,17 +1664,21 @@ nav ul li.current {
   nav {
     display: none; } }
 .button {
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
   height: 40px;
   padding: 0 30px;
   display: inline-block;
-  background-color: #dd2663;
-  border-radius: 22px;
-  color: white;
+  border: thin solid #ff7573;
+  border-radius: 3px;
+  color: #ff7573;
   line-height: 40px;
   text-decoration: none; }
   .button:hover, .button:focus {
-    color: white;
-    background-color: #c81e50; }
+    background-color: rgba(255, 117, 115, 0.2); }
 
 section {
   display: -webkit-box;
@@ -1712,26 +1719,41 @@ section {
   section {
     padding: 0 30px; } }
 section.text {
-  text-align: center; }
+  text-align: left; }
   section.text .section-body {
     max-width: 500px;
-    margin: auto; }
+    margin: auto 0; }
     section.text .section-body > h2,
     section.text .section-body > p,
+    section.text ul .section-body > li,
+    ul section.text .section-body > li,
     section.text .section-body > a,
     section.text .section-body > ul {
       margin-bottom: 1em; }
-    section.text .section-body p span, section.text .section-body a span {
+    section.text .section-body h2 {
+      margin-bottom: 50px; }
+      section.text .section-body h2:after {
+        content: '';
+        bottom: -15px;
+        left: 0;
+        position: absolute;
+        width: 25px;
+        height: 1px;
+        background-color: #aaaaaa; }
+    section.text .section-body p span, section.text .section-body ul li span, ul section.text .section-body li span, section.text .section-body a span {
       text-decoration: none !important;
       border-bottom: thin dotted #333333; }
     section.text .section-body .button {
       margin-top: 1em; }
+    section.text .section-body ul {
+      list-style-type: circle;
+      list-style-position: inside; }
 
 section.playlist ul li {
   height: 100px;
   padding: 0 25px;
   border-bottom: thin solid #e8e7e6; }
-  section.playlist ul li p, section.playlist ul li a {
+  section.playlist ul li p, section.playlist ul li li, section.playlist ul li a {
     line-height: 100px; }
 
 @media only screen and (max-width: 31.25em) {
@@ -3270,19 +3292,19 @@ progress[value="200"]::-webkit-progress-value:before {
 
 .progress-container:hover progress::-webkit-progress-bar,
 .progress-container.is_active progress::-webkit-progress-bar {
-  border-color: #dd2663; }
+  border-color: #ff7573; }
 .progress-container:hover progress::-webkit-progress-value:before,
 .progress-container.is_active progress::-webkit-progress-value:before {
-  background-color: #dd2663; }
+  background-color: #ff7573; }
 .progress-container:hover .mask-2,
 .progress-container.is_active .mask-2 {
-  background: #dd2663 !important; }
+  background: #ff7573 !important; }
 .progress-container:hover .trigger-audio.play i,
 .progress-container.is_active .trigger-audio.play i {
-  border-left: 15px solid #dd2663; }
+  border-left: 15px solid #ff7573; }
 .progress-container:hover .trigger-audio.pause i,
 .progress-container.is_active .trigger-audio.pause i {
-  border-color: #dd2663; }
+  border-color: #ff7573; }
 
 /*
  * Show and Hide class functions
@@ -3539,41 +3561,41 @@ section.image .section-body.is-pos-center {
 section.image .section-body.is-pos-right {
   text-align: right; }
 
-h1.is-italic, h2.is-italic, p.is-italic, a.is-italic,
+h1.is-italic, h2.is-italic, p.is-italic, ul li.is-italic, a.is-italic,
 .is-italic.button {
   font-style: italic; }
-h1.is-underlined, h2.is-underlined, p.is-underlined, a.is-underlined,
+h1.is-underlined, h2.is-underlined, p.is-underlined, ul li.is-underlined, a.is-underlined,
 .is-underlined.button {
   text-decoration: underline; }
-h1.is-capitalized, h2.is-capitalized, p.is-capitalized, a.is-capitalized,
+h1.is-capitalized, h2.is-capitalized, p.is-capitalized, ul li.is-capitalized, a.is-capitalized,
 .is-capitalized.button {
   text-transform: capitalize; }
-h1.is-uppercase, h2.is-uppercase, p.is-uppercase, a.is-uppercase,
+h1.is-uppercase, h2.is-uppercase, p.is-uppercase, ul li.is-uppercase, a.is-uppercase,
 .is-uppercase.button {
   text-transform: uppercase; }
-h1.is-lowercase, h2.is-lowercase, p.is-lowercase, a.is-lowercase,
+h1.is-lowercase, h2.is-lowercase, p.is-lowercase, ul li.is-lowercase, a.is-lowercase,
 .is-lowercase.button {
   text-transform: lowercase; }
-h1.is-bold, h2.is-bold, p.is-bold, a.is-bold,
+h1.is-bold, h2.is-bold, p.is-bold, ul li.is-bold, a.is-bold,
 .is-bold.button {
   font-weight: 700; }
-h1.is-aligned-center, h2.is-aligned-center, p.is-aligned-center, a.is-aligned-center,
+h1.is-aligned-center, h2.is-aligned-center, p.is-aligned-center, ul li.is-aligned-center, a.is-aligned-center,
 .is-aligned-center.button {
   text-align: center; }
-h1.is-aligned-left, h2.is-aligned-left, p.is-aligned-left, a.is-aligned-left,
+h1.is-aligned-left, h2.is-aligned-left, p.is-aligned-left, ul li.is-aligned-left, a.is-aligned-left,
 .is-aligned-left.button {
   text-align: left; }
-h1.is-aligned-right, h2.is-aligned-right, p.is-aligned-right, a.is-aligned-right,
+h1.is-aligned-right, h2.is-aligned-right, p.is-aligned-right, ul li.is-aligned-right, a.is-aligned-right,
 .is-aligned-right.button {
   text-align: right; }
-h1.is-black, h2.is-black, p.is-black, a.is-black,
+h1.is-black, h2.is-black, p.is-black, ul li.is-black, a.is-black,
 .is-black.button {
   color: #333333; }
-h1.is-white, h2.is-white, p.is-white, a.is-white,
+h1.is-white, h2.is-white, p.is-white, ul li.is-white, a.is-white,
 .is-white.button {
   color: white; }
 
-p.is-small, a.is-small {
+p.is-small, ul li.is-small, a.is-small {
   font-size: 15px; }
 
 .is-stretched-wrapper {
