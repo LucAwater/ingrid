@@ -1795,7 +1795,7 @@ progress {
 progress::-webkit-progress-bar {
   border-radius: 100%;
   background: white;
-  border: thin solid #333333; }
+  border: thin solid #aaaaaa; }
 
 progress::-webkit-progress-value {
   position: absolute;
@@ -1811,7 +1811,7 @@ progress::-webkit-progress-value {
     position: absolute;
     left: 0;
     top: 0;
-    background: #333333;
+    background: #aaaaaa;
     -webkit-transform-origin: right center;
     -moz-transform-origin: right center;
     transform-origin: right center;
@@ -3245,7 +3245,7 @@ progress[value="200"]::-webkit-progress-value:before {
   right: 1px;
   left: inherit;
   z-index: -1;
-  background: #333333;
+  background: #aaaaaa;
   border-radius: 0 50px 50px 0; }
 
 .trigger-audio {
@@ -3281,14 +3281,14 @@ progress[value="200"]::-webkit-progress-value:before {
     height: 0;
     margin: auto;
     border-top: 8px solid transparent;
-    border-left: 15px solid #333333;
+    border-left: 15px solid #aaaaaa;
     border-bottom: 8px solid transparent; }
   .trigger-audio.pause i {
     width: 16px;
     height: 20px;
     background: transparent;
-    border-left: 5px solid #333333;
-    border-right: 5px solid #333333; }
+    border-left: 5px solid #aaaaaa;
+    border-right: 5px solid #aaaaaa; }
 
 .progress-container:hover progress::-webkit-progress-bar,
 .progress-container.is_active progress::-webkit-progress-bar {
