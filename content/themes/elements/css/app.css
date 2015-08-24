@@ -1345,7 +1345,7 @@ a {
   a:hover, a:active {
     color: #ff7573; }
 
-p a, ul li a, a a {
+section.text p a, section.text ul li a, ul section.text li a, section.text a a {
   border-bottom: thin dotted #333333; }
 
 nav a,
@@ -1406,7 +1406,7 @@ main {
   height: 100%;
   min-height: 100%;
   overflow: hidden;
-  padding: 50px 0 0;
+  padding: 0;
   background: white; }
 
 header {
@@ -1643,7 +1643,7 @@ nav {
   z-index: 1100;
   width: 60%;
   height: 50px;
-  background-color: #333333;
+  background-color: #e8e7e6;
   text-align: center; }
   nav ul {
     display: inline;
@@ -1651,8 +1651,6 @@ nav {
     nav ul li {
       display: inline-block;
       margin: 0 2em; }
-      nav ul li a {
-        color: white; }
 
 nav ul li.current {
   color: #ff7573; }
@@ -1721,7 +1719,7 @@ section {
 section.text {
   text-align: left; }
   section.text .section-body {
-    max-width: 500px;
+    max-width: 450px;
     margin: auto 0; }
     section.text .section-body > h2,
     section.text .section-body > p,
@@ -1749,12 +1747,14 @@ section.text {
       list-style-type: circle;
       list-style-position: inside; }
 
-section.playlist ul li {
-  height: 100px;
-  padding: 0 25px;
-  border-bottom: thin solid #e8e7e6; }
-  section.playlist ul li p, section.playlist ul li li, section.playlist ul li a {
-    line-height: 100px; }
+section.playlist {
+  padding: 0 75px; }
+  section.playlist ul li {
+    height: 100px;
+    padding: 0 25px;
+    border-bottom: thin solid #e8e7e6; }
+    section.playlist ul li p, section.playlist ul li li, section.playlist ul li a {
+      line-height: 100px; }
 
 @media only screen and (max-width: 31.25em) {
   section.playlist {
