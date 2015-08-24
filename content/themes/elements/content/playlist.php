@@ -1,6 +1,6 @@
 <?php
 echo
-'<section class="playlist" id="playlist">
+'<section class="playlist has-anchor" id="anchor-' . $i_anchor . '">
   <div class="section-body">';
     if( have_rows('playlist_item') ):
 
