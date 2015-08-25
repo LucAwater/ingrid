@@ -3661,3 +3661,5 @@ body.is-mobile.is-loading > * {
 @media only screen and (max-width: 31.25em) {
   .is-fullwidth {
     margin-left: -1.875rem; } }
+body.ie main {
+  padding-top: 100px; }
