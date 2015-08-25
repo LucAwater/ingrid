@@ -13,7 +13,11 @@ h1{
 
 h2{
   @extend h1;
-  font-size: 2em;
+
+  color: $grey;
+  font-size: 20px;
+  font-weight: 100;
+  letter-spacing: 3px;
 }
 
 p{
@@ -23,6 +27,24 @@ p{
 }
 
 a{
+  @extend %base;
+  @extend p;
+
+  color: $black;
+  text-decoration: none;
+
+  &:hover,
+  &:active{
+    color: $pink;
+  }
+}
+
+section.text p a{
+  border-bottom: thin dotted $black;
+}
+
+nav a,
+.button{
   @extend %base;
 
   color: $black;

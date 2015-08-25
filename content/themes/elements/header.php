@@ -34,6 +34,12 @@
 
   <!-- WP_HEAD() -->
   <?php wp_head(); ?>
+
+  <!-- Get page slug -->
+  <?php
+  global $post;
+  $page_slug = get_post( $post )->post_name;
+  ?>
 </head>
 
-<body class="is-loading">
+<body class="is-loading<?php echo ' page-' . $page_slug; ?>">
