@@ -3663,3 +3663,14 @@ body.is-mobile.is-loading > * {
     margin-left: -1.875rem; } }
 body.ie main {
   padding-top: 100px; }
+
+body.mobile {
+  overflow: hidden; }
+  body.mobile main {
+    overflow: scroll;
+    height: 100% !important; }
+    body.mobile main section {
+      min-height: 0;
+      margin: 100px 0; }
+    body.mobile main section:last-child {
+      margin: 100px 0 0; }

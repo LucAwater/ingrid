@@ -1,0 +1,17 @@
+body.mobile{
+  overflow: hidden;
+
+  main{
+    overflow: scroll;
+    height: 100% !important;
+
+    section{
+      min-height: 0;
+      margin: 100px 0;
+    }
+
+    section:last-child{
+      margin: 100px 0 0;
+    }
+  }
+}
