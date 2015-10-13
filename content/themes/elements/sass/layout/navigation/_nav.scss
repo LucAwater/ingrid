@@ -40,3 +40,9 @@ nav ul{
     display: none;
   }
 }
+
+@media #{$small-only}{
+  nav{
+    display: none
+  }
+}
