@@ -5,6 +5,12 @@ body.mobile{
     overflow: scroll;
     height: 100% !important;
 
+    nav{
+      position: relative;
+
+      width: 100%;
+    }
+
     section{
       min-height: 0;
       margin: 100px 0;
