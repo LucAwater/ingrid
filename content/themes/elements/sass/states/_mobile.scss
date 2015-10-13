@@ -1,14 +1,14 @@
 body.mobile{
-  overflow: hidden;
+  aside{
+    height: 100%;
+    overflow: hidden;
+  }
 
   main{
-    overflow: scroll;
-    height: 100% !important;
-
     nav{
-      position: relative;
-
-      width: 100%;
+      // position: relative;
+      //
+      // width: 100%;
     }
 
     section{
