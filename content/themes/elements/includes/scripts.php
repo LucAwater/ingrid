@@ -4,7 +4,7 @@ function enqueue_theme_scripts() {
   wp_deregister_script('jquery');
   wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', null, false, true );
 	wp_enqueue_script( 'jquery' );
-	
+
 	if( WP_DEBUG ):
 		// Plugins
 		// For example:
