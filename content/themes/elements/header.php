@@ -42,4 +42,15 @@
   ?>
 </head>
 
-<body class="is-loading<?php echo ' page-' . $page_slug; ?>">
+<?php
+require_once 'includes/Mobile_Detect.php';
+$detect = new Mobile_Detect;
+
+if( $detect->isMobile() && $detect->isTablet() ){
+  $body_class = 'is-loading mobile page-' . $page_slug;
+} else {
+  $body_class = 'is-loading page-' . $page_slug;
+}
+?>
+
+<body class="<?php echo $body_class; ?>">
