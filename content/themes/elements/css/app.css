@@ -1661,6 +1661,9 @@ nav ul li.current {
 @media only screen and (max-width: 31.25em) {
   nav {
     display: none; } }
+@media only screen and (max-width: 31.25em) {
+  nav {
+    display: none; } }
 .button {
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -3664,13 +3667,14 @@ body.is-mobile.is-loading > * {
 body.ie main {
   padding-top: 100px; }
 
-body.mobile {
+body.mobile aside {
+  height: 100%;
   overflow: hidden; }
-  body.mobile main {
-    overflow: scroll;
-    height: 100% !important; }
-    body.mobile main section {
-      min-height: 0;
-      margin: 100px 0; }
-    body.mobile main section:last-child {
-      margin: 100px 0 0; }
+body.mobile main section {
+  min-height: 0;
+  margin: 100px 0; }
+body.mobile main section:last-child {
+  margin: 100px 0 0; }
+
+body.mobile.landscape aside {
+  display: none; }
