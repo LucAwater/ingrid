@@ -3625,38 +3625,6 @@ p.is-small, ul li.is-small, a.is-small {
     min-width: 100%;
     width: auto; }
 
-body > * {
-  opacity: 1;
-  visibility: visible;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s; }
-
-body.is-loading {
-  height: auto !important;
-  background: url("../img/logo.svg") center center no-repeat;
-  background-size: 200px;
-  background-attachment: fixed; }
-  body.is-loading > * {
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: 0s;
-    -moz-transition: 0s;
-    -ms-transition: 0s;
-    -o-transition: 0s;
-    transition: 0s; }
-
-body.is-mobile.is-loading > * {
-  opacity: 1;
-  visibility: visible;
-  -webkit-transition: 0s;
-  -moz-transition: 0s;
-  -ms-transition: 0s;
-  -o-transition: 0s;
-  transition: 0s; }
-
 .is-fullwidth {
   width: calc(100% + (3.75rem * 2));
   margin-left: -3.75rem; }
