@@ -9,6 +9,7 @@ function enqueue_theme_scripts() {
 		// Plugins
 		// For example:
     wp_enqueue_script( 'app', get_template_directory_uri() . '/js/app.js', 'jquery', false, true );
+    wp_enqueue_script( 'play', get_template_directory_uri() . '/js/play.js', 'jquery', false, true );
  	else:
 		// All concatenated and compressed JS in one file:
 		wp_enqueue_script( 'app', get_template_directory_uri() . '/js/app.js', 'jquery', false, true );

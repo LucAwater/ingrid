@@ -15,27 +15,25 @@ echo
         if( $i < 10 ){
           $i = '0' . $i;
         }
+        ?>
 
-        echo
-        '<li>
-        <p>' . $i . '. ' . $title . '</p>
-        <audio id="' . $i . '">
-          <source src="' . $file['url'] . '" type="' . $file['mime_type'] . '">
-        </audio>
-        <div class="progress-container">
-          <progress value="0" max="200"></progress>
-          <a class="trigger trigger-audio play">
-            <div class="trigger-inner">
+        <li>
+          <p><?php echo $i . '. ' . $title; ?></p>
+
+          <audio id="<?php echo $i; ?>">
+            <source src="<?php echo $file['url']; ?>" type="<?php echo $file['mime_type']; ?>">
+          </audio>
+
+          <div class="progress-container">
+            <progress value="0" max="200"></progress>
+
+            <a class="trigger trigger-audio play">
               <i></i>
-            </div>
-          </a>
-          <div class="mask mask-1 circle-half"></div>
-          <div class="mask mask-2 circle-half"></div>
-        </div>
-        </li>';
-
+            </a>
+          </div>
+        </li>
+        <?php
         $i++;
-
       endwhile;
 
       echo '</ul>';
