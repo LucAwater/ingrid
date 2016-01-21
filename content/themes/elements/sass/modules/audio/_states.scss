@@ -21,3 +21,11 @@
     border-color: $pink;
   }
 }
+
+.playlist li{
+  @include transition( .2s );
+}
+
+.playlist li.is-active{
+  background-color: $grey-light;
+}

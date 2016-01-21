@@ -24,12 +24,12 @@ echo
             <source src="<?php echo $file['url']; ?>" type="<?php echo $file['mime_type']; ?>">
           </audio>
 
+          <a class="trigger trigger-audio play">
+            <i></i>
+          </a>
+
           <div class="progress-container">
             <progress value="0" max="200"></progress>
-
-            <a class="trigger trigger-audio play">
-              <i></i>
-            </a>
           </div>
         </li>
         <?php

@@ -4,7 +4,9 @@
   var pauseAll = function() {
     $('audio').each( function() {
       var a = $(this).get(0);
+      var item = this.closest('li');
       a.pause();
+      $(item).removeClass('is-active');
       trigger.addClass('play');
       trigger.removeClass('pause');
     });
@@ -17,12 +19,12 @@
     var progress_cont = $(item).find('.progress-container');
     var paused = audio[0].paused;
 
-    // Give item an active state
-    $(item).addClass('is-active');
-
     // Play the demo
     if( paused === true ){
       pauseAll();
+
+      // Give item an active state
+      $(item).addClass('is-active');
 
       // Switch button's state
       $(this).addClass('pause');
@@ -38,10 +40,14 @@
 
         // Get value
         var value = progress[0].getAttribute('value');
+        console.log(value);
       });
 
     // Pause the demo
     } else {
+      // Remove item's active state
+      $(item).removeClass('is-active');
+
       // Switch button's state
       $(this).addClass('play');
       $(this).removeClass('pause');
