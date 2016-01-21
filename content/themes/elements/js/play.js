@@ -35,12 +35,25 @@
 
       // Update progress value
       audio.on( 'timeupdate', function() {
-        // Update value
+        // Update progress value
         progress.attr( 'value', Math.round(((this.currentTime / this.duration) * 100) * 2) );
 
         // Get value
         var value = progress[0].getAttribute('value');
-        console.log(value);
+
+        if( value > 199 ){
+          var trigger_pause = $('.trigger-audio.pause');
+
+          // Remove item's active state
+          $(item).removeClass('is-active');
+
+          // Switch button's state
+          trigger_pause.addClass('play');
+          trigger_pause.removeClass('pause');
+
+          // Update progress value
+          progress.attr( 'value', 0 );
+        }
       });
 
     // Pause the demo

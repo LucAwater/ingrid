@@ -11,19 +11,16 @@
   border-radius: 100%;
   cursor: pointer;
 
-  .trigger-inner{
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    position: absolute;
+  &:hover,
+  &:active{
+    &.play i{
+      border-left-color: $pink;
+    }
 
-    width: 42px;
-    height: 42px;
-    margin: auto;
-
-    background: $white;
-    border-radius: 100%;
+    &.pause i{
+      border-left-color: $pink;
+      border-right-color: $pink;
+    }
   }
 
   &.play i,

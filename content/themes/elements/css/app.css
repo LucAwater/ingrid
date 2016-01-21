@@ -1784,8 +1784,7 @@ section.grid ul li {
   width: 100%;
   height: 3px;
   margin: auto;
-  overflow: hidden;
-  cursor: pointer; }
+  overflow: hidden; }
 
 progress {
   -webkit-transition: 0.2s;
@@ -2421,17 +2420,11 @@ progress[value="200"] {
   background: transparent;
   border-radius: 100%;
   cursor: pointer; }
-  .trigger-audio .trigger-inner {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    width: 42px;
-    height: 42px;
-    margin: auto;
-    background: white;
-    border-radius: 100%; }
+  .trigger-audio:hover.play i, .trigger-audio:active.play i {
+    border-left-color: #ff7573; }
+  .trigger-audio:hover.pause i, .trigger-audio:active.pause i {
+    border-left-color: #ff7573;
+    border-right-color: #ff7573; }
   .trigger-audio.play i, .trigger-audio.pause i {
     top: 0;
     right: 0;
@@ -2454,31 +2447,19 @@ progress[value="200"] {
     border-left: 5px solid #aaaaaa;
     border-right: 5px solid #aaaaaa; }
 
-.progress-container:hover progress::-webkit-progress-bar,
-.progress-container.is_active progress::-webkit-progress-bar {
-  border-color: #ff7573; }
-.progress-container:hover progress::-webkit-progress-value:before,
-.progress-container.is_active progress::-webkit-progress-value:before {
-  background-color: #ff7573; }
-.progress-container:hover .mask-2,
-.progress-container.is_active .mask-2 {
-  background: #ff7573 !important; }
-.progress-container:hover .trigger-audio.play i,
-.progress-container.is_active .trigger-audio.play i {
-  border-left: 15px solid #ff7573; }
-.progress-container:hover .trigger-audio.pause i,
-.progress-container.is_active .trigger-audio.pause i {
-  border-color: #ff7573; }
-
 .playlist li {
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
   -ms-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s; }
+  .playlist li progress {
+    background-color: #e8e7e6; }
 
 .playlist li.is-active {
   background-color: #e8e7e6; }
+  .playlist li.is-active progress {
+    background-color: #ff7573; }
 
 /*
  * Show and Hide class functions
