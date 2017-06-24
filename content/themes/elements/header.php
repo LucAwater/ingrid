@@ -23,7 +23,7 @@
   <meta property="og:url" content="">
 
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
@@ -35,8 +35,8 @@
   <!-- WP_HEAD() -->
   <?php wp_head(); ?>
 
-  <!-- Get page slug -->
   <?php
+  // Get page slug
   global $post;
   $page_slug = get_post( $post )->post_name;
   ?>
@@ -47,9 +47,9 @@ require_once 'includes/Mobile_Detect.php';
 $detect = new Mobile_Detect;
 
 if( $detect->isMobile() && $detect->isTablet() ){
-  $body_class = 'is-loading mobile page-' . $page_slug;
+  $body_class = 'mobile page-' . $page_slug;
 } else {
-  $body_class = 'is-loading page-' . $page_slug;
+  $body_class = 'page-' . $page_slug;
 }
 ?>
 

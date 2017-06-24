@@ -1,10 +1,10 @@
 body.mobile{
-  overflow: hidden;
+  aside{
+    height: 100%;
+    overflow: hidden;
+  }
 
   main{
-    overflow: scroll;
-    height: 100% !important;
-
     section{
       min-height: 0;
       margin: 100px 0;
@@ -13,5 +13,11 @@ body.mobile{
     section:last-child{
       margin: 100px 0 0;
     }
+  }
+}
+
+body.mobile.landscape{
+  aside{
+    display: none;
   }
 }

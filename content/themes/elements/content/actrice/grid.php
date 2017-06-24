@@ -9,7 +9,16 @@ $image4 = $images[3];
 $image5 = $images[4];
 ?>
 
-<ul>
+<ul class="masonry" style="max-width:1200px; margin:auto;">
+
+<?php
+foreach( $images as $image ):
+  echo '<li style="margin-bottom:-5px; width:48%;"><img src="' . $image['sizes']['large'] . '"></li>';
+endforeach;
+?>
+
+</ul>
+<!-- <ul>
   <li
   class="width-40 left-20 skrollable"
   data-bottom-top="transform: translate3d(0px,100px,0px);"
@@ -51,4 +60,4 @@ $image5 = $images[4];
   data-top-bottom="transform: translate3d(0px,-300px,0px);">
     <img src="<?php echo $image5['sizes']['large']; ?>" width="<?php echo $image5['width']; ?>" height="<?php echo $image5['height']; ?>">
   </li>
-</ul>
+</ul> -->
