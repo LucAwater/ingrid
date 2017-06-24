@@ -1,4 +1,5 @@
 (function($) {
+  var audioclock;
   var trigger = $('.trigger-audio');
 
   var pauseAll = function() {
@@ -29,14 +30,21 @@
       // Switch button's state
       $(this).addClass('pause');
       $(this).removeClass('play');
+      console.log(audio.currentTime);
 
       // Play audio
       audio.get(0).play();
 
+      audio.on('pause', function() {
+        clearInterval(audioclock);
+      });
+
       // Update progress value
       audio.on( 'timeupdate', function() {
         // Update progress value
-        progress.attr( 'value', Math.round(((this.currentTime / this.duration) * 100) * 2) );
+        audioclock = setInterval(function () {
+          progress.attr( 'value', Math.round(((audio[0].currentTime / audio[0].duration) * 100) * 2) );
+        }, 50);
 
         // Get value
         var value = progress[0].getAttribute('value');
