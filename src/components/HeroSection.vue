@@ -47,10 +47,10 @@ import { hero } from '../content/site.js'
 
 .hero-heading {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 750;
   font-size: clamp(4rem, 11vw, 9rem);
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
   color: var(--color-text);
   margin-bottom: 2rem;
 }
