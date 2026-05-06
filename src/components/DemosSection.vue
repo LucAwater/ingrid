@@ -20,11 +20,6 @@ import { demos } from '../content/site.js'
 </template>
 
 <style scoped>
-.demos {
-  background-color: var(--color-surface);
-  transition: background-color var(--ease-slow);
-}
-
 .tracks {
   display: flex;
   flex-direction: column;

@@ -13,7 +13,8 @@ export const nav = [
 
 export const hero = {
   eyebrow: 'Stemactrice & Voice-over',
-  namePrefix: 'Ingrid de ',
+  nameLine1: 'Ingrid',
+  nameLine2: 'de ',
   nameItalic: 'lala',
   nameSuffix: 'Laat',
   tagline:

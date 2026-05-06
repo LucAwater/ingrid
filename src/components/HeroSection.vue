@@ -7,7 +7,8 @@ import { hero } from '../content/site.js'
     <div class="hero-inner container">
       <p class="hero-eyebrow">{{ hero.eyebrow }}</p>
       <h1 class="hero-heading">
-        {{ hero.namePrefix }}<em class="hero-italic">{{ hero.nameItalic }}</em>{{ hero.nameSuffix }}
+        <span class="hero-line">{{ hero.nameLine1 }}</span>
+        <span class="hero-line">{{ hero.nameLine2 }}<em class="hero-italic">{{ hero.nameItalic }}</em>{{ hero.nameSuffix }}</span>
       </h1>
       <p class="hero-tagline">{{ hero.tagline }}</p>
       <div class="hero-ctas">
@@ -32,10 +33,6 @@ import { hero } from '../content/site.js'
   align-items: center;
 }
 
-.hero-inner {
-  max-width: 900px;
-}
-
 .hero-eyebrow {
   font-size: 0.75rem;
   font-weight: 600;
@@ -48,11 +45,15 @@ import { hero } from '../content/site.js'
 .hero-heading {
   font-family: var(--font-display);
   font-weight: 750;
-  font-size: clamp(4rem, 11vw, 9rem);
-  line-height: 1;
+  font-size: clamp(2rem, 10vw, 9rem);
+  line-height: 1.05;
   letter-spacing: 0;
   color: var(--color-text);
   margin-bottom: 2rem;
+}
+
+.hero-line {
+  display: block;
 }
 
 .hero-italic {

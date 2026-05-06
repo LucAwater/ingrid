@@ -108,6 +108,11 @@ ol {
   padding: var(--section-py) 0;
 }
 
+main > section:nth-child(even) {
+  background-color: var(--color-surface);
+  transition: background-color var(--ease-slow);
+}
+
 .section-eyebrow {
   font-family: var(--font-body);
   font-size: 0.75rem;

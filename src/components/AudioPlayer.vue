@@ -89,27 +89,29 @@ onUnmounted(() => {
       :disabled="hasError"
       @click="togglePlay"
     >
-      <svg
-        v-if="!isPlaying"
-        xmlns="http://www.w3.org/2000/svg"
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <polygon points="5,3 19,12 5,21" fill="currentColor" />
-      </svg>
-      <svg
-        v-else
-        xmlns="http://www.w3.org/2000/svg"
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <rect x="6" y="4" width="4" height="16" fill="currentColor" />
-        <rect x="14" y="4" width="4" height="16" fill="currentColor" />
-      </svg>
+      <span class="play-btn-inner">
+        <svg
+          v-if="!isPlaying"
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <polygon points="5,3 19,12 5,21" fill="currentColor" />
+        </svg>
+        <svg
+          v-else
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <rect x="6" y="4" width="4" height="16" fill="currentColor" />
+          <rect x="14" y="4" width="4" height="16" fill="currentColor" />
+        </svg>
+      </span>
     </button>
 
     <div class="player-body">
@@ -174,27 +176,37 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
+  width: 3.25rem;
+  height: 3.25rem;
   border-radius: 50%;
-  background-color: var(--color-text);
-  color: var(--color-bg);
-  transition:
-    background-color var(--ease),
-    opacity var(--ease);
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  padding: 3px;
+  transition: transform var(--ease), opacity var(--ease), box-shadow var(--ease);
+}
+
+.play-btn-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color var(--ease-slow);
 }
 
 .play-btn:hover:not(:disabled) {
-  background-color: var(--color-accent-purple-vivid);
+  transform: scale(1.07);
 }
 
 .play-btn:disabled {
-  opacity: 0.4;
+  opacity: 0.35;
   cursor: not-allowed;
 }
 
 .playing .play-btn {
-  background-color: var(--color-accent-purple-vivid);
+  box-shadow: 0 0 18px rgba(139, 92, 246, 0.45), 0 0 36px rgba(236, 72, 153, 0.25);
 }
 
 .player-body {

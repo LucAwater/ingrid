@@ -21,11 +21,6 @@ import { about } from '../content/site.js'
 </template>
 
 <style scoped>
-.about {
-  background-color: var(--color-surface);
-  transition: background-color var(--ease-slow);
-}
-
 .about-inner {
   display: grid;
   grid-template-columns: 1fr;
