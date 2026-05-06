@@ -27,7 +27,7 @@ import { hero } from '../content/site.js'
 <style scoped>
 .hero {
   padding: clamp(5rem, 10vw, 9rem) 0 clamp(4rem, 8vw, 7rem);
-  min-height: calc(100svh - var(--header-height));
+  min-height: 100svh;
   display: flex;
   align-items: center;
 }
