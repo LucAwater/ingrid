@@ -1,5 +1,5 @@
 <script setup>
-import { about } from '../content/site.js'
+import { about } from "../content/site.js";
 </script>
 
 <template>
@@ -11,9 +11,12 @@ import { about } from '../content/site.js'
       <div class="about-content">
         <h2 class="section-heading">{{ about.heading }}</h2>
         <div class="about-body">
-          <p v-for="(p, i) in about.paragraphs" :key="i" class="about-p">
-            {{ p }}
-          </p>
+          <p
+            v-for="(p, i) in about.paragraphs"
+            :key="i"
+            class="about-p"
+            v-html="p"
+          ></p>
         </div>
       </div>
     </div>
