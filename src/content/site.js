@@ -30,7 +30,7 @@ export const about = {
   eyebrow: "Over mij",
   heading: "Een stem met karakter",
   paragraphs: [
-    "Met 12 jaar ervaring op radio als presentatrice en station-voice, daarna steeds vaker in reclamespots en storytelling voor bedrijven en educatieve videos, kan ik zeggen dat ik een allround voice-over ben. In combinatie met ruime acteer ervaring houd ik wel van een uitdaging in inspreekwerk. Ik werk graag met klanten die vertrouwen op mijn professionaliteit om een tekst de juiste intonatie en sfeer mee te geven.",
+    "Met 20 jaar ervaring op radio als presentatrice en station-voice, daarna steeds vaker in reclamespots en storytelling voor bedrijven en educatieve videos, kan ik zeggen dat ik een allround voice-over ben. In combinatie met ruime acteer ervaring houd ik wel van een uitdaging in inspreekwerk. Ik werk graag met klanten die vertrouwen op mijn professionaliteit om een tekst de juiste intonatie en sfeer mee te geven.",
     "Stem verleend aan: Swinglight, Toverland, COS, Knorr, LG, Primark, AgentschapNL, Scania, Nespresso, Voedingscentrum, Studio040 en vele anderen.",
     "Vanuit mijn opnamestudio in Eindhoven kan ik binnen 48 uur leveren door heel Nederland, België en daarbuiten!",
     "Meer informatie en prijsopgave, mail: <a href='mailto:ingrid@lalalaat.nl'>ingrid@lalalaat.nl</a>",
