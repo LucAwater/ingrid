@@ -1,0 +1,13 @@
+{
+  "$schema": "https://cdn.jsdelivr.net/npm/oxlint@latest/configuration_schema.json",
+  "env": {
+    "browser": true,
+    "es2022": true
+  },
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-undef": "error",
+    "eqeqeq": "warn"
+  },
+  "ignorePatterns": ["dist/", "node_modules/"]
+}

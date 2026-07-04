@@ -1,48 +1,60 @@
-# Wordpress Elements
+# Ingrid de lalaLaat
 
-This is a Wordpress framework, which can be used in a variety of ways. It contains a wordpress setup with a multiple server config method and wordpress as a submodule. It also has a basic wordpress theme. It contains elements like a gallery, grid, text block and more. To make it even easier, there's also an Advanced Custom Fields(ACF) export file so you don't have to manually add these with every install.
+Website for Ingrid de lalaLaat, stemactrice & voice-over.
 
-Although this framework is initially build for onepagers, of course it can easily be used to make larger websites, go crazy.
+## Stack
 
-Wordpress Elements initially assumes a setup with these dependencies:
-* You have multiple servers(local, development, production)
-* You have an Advanced Custom Fields(ACF) license key
-
+- [Vue 3](https://vuejs.org/) — component framework
+- [Vite](https://vitejs.dev/) — build tool
+- [pnpm](https://pnpm.io/) — package manager
+- [oxlint](https://oxc.rs/docs/guide/usage/linter.html) — linter
 
 ## Getting started
 
-1. Git clone git@github.com:LucAwater/Wordpress-Elements.git .
-2. Git submodule init
-3. Git submodule update
-4. Go to http://yourwebsite.com/wordpress/wp-admin
-5. Install all plugins
-6. Activate 'Elements' theme
-7. import 'acf.json' file in ACF
-8. Begin building something awesome
+```bash
+pnpm install
+pnpm dev
+```
 
+## Scripts
 
-## Theme
-###Class system
-The class system in the elements theme is setup to be readable, flexible and easily extendable.
+| Command | Description |
+|---|---|
+| `pnpm dev` | Start dev server at http://localhost:5173 |
+| `pnpm build` | Build for production into `dist/` |
+| `pnpm preview` | Preview the production build locally |
+| `pnpm lint` | Lint with oxlint |
+| `pnpm format` | Format with oxfmt |
 
-**Module** class consists of:
-* module  
-* module variant  
+## Project structure
 
-Module example: `<div class=“grid grid-primary”>`
+```
+src/
+├── content/
+│   └── site.js          # All copy and content — edit this to update the site
+├── composables/
+│   ├── useTheme.js       # Light/dark mode with localStorage persistence
+│   └── useAudioManager.js# Ensures only one audio demo plays at a time
+├── components/
+│   ├── AppHeader.vue
+│   ├── ThemeToggle.vue
+│   ├── HeroSection.vue
+│   ├── AboutSection.vue
+│   ├── ServicesSection.vue
+│   ├── DemosSection.vue
+│   ├── AudioPlayer.vue
+│   ├── ContactSection.vue
+│   └── AppFooter.vue
+├── assets/styles/
+│   └── base.css          # CSS custom properties, global resets, shared classes
+├── App.vue
+└── main.js
+```
 
-module          = grid  
-module variant  = primary
+## Audio demos
 
-**State** class consists of:
-* indicator  
-* indicator extension  
-* subject  
-* subject variant  
+Drop `.mp3` files into `public/audio/` and update the `demos.tracks` array in `src/content/site.js`. The player handles missing files gracefully.
 
-State example: `<div class=“is-bold is-pos-left has-no-pad-top”>`
+## Theming
 
-indicator           = is, has  
-indicator extension = no  
-subject             = bold, pos, pad  
-subject variant     = left, top
+Light and dark mode are driven entirely by CSS custom properties defined in `src/assets/styles/base.css`. The active theme is stored in `localStorage` and defaults to the user's system preference.
