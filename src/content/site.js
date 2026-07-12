@@ -48,29 +48,29 @@ export const services = {
         "Radio- en tv-reclames die opvallen en blijven hangen. Van productlancering tot merkidentiteit.",
     },
     {
-      title: "Documentaires",
-      description:
-        "Een vertellersstem die verdiept en begeleidt, zonder op de voorgrond te treden.",
-    },
-    {
-      title: "E-learning",
-      description:
-        "Helder, toegankelijk en rustgevend — zodat de boodschap daadwerkelijk landt.",
-    },
-    {
-      title: "Animatie",
-      description:
-        "Karakterstemmen die personages tot leven brengen met nuance en energie.",
-    },
-    {
       title: "Corporate video",
       description:
         "Bedrijfsvideo's en presentaties met precies de juiste toon voor jouw merk.",
     },
     {
-      title: "Audioboeken",
+      title: "Station voice",
       description:
-        "Langvorm vertelling waarbij ritme, sfeer en karakter centraal staan.",
+        "De herkenbare stem van je radiozender of platform, met persoonlijkheid en continuïteit.",
+    },
+    {
+      title: "E-learning",
+      description:
+        "Helder, toegankelijk en rustgevend zodat de boodschap daadwerkelijk landt.",
+    },
+    {
+      title: "Kinderboeken",
+      description:
+        "Voorlezen met karakter, timing en warmte voor kleine en grote luisteraars.",
+    },
+    {
+      title: "Podcasts",
+      description:
+        "Een vertrouwde voice-over die verhalen versterkt en luisteraars begeleidt.",
     },
   ],
 };
